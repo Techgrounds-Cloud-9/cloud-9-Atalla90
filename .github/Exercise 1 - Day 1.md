@@ -1,5 +1,5 @@
 # [Git and GitHub]
-[Getting familier with Git terminology and basic tools.]
+[Getting familiar with Git terminology and basic tools.]
 
 ## Key terminology
 [Source Code Management / Version Control: The way to keep track of the modifications to a source code in a repository.
@@ -26,7 +26,7 @@ Clone: Downloading a copy of a certain repository on a local machine.
 
  2. https://docs.github.com/
 
- 
+
  3. https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.]
 
 ### Overcome challenges
