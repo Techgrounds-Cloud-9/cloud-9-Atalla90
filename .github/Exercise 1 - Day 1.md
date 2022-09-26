@@ -21,8 +21,8 @@ Clone: Downloading a copy of a certain repository on a local machine.
 
 ## Exercise
 ### Sources
-[1. https://pediaa.com/what-is-the-difference-between-centralized-and-distributed-version-control/#:~:text=The%20main%20difference%20between%20centralized,repositories%20of%20the%20local%20machines.
- 2. https://docs.github.com/
+[1. https://pediaa.com/what-is-the-difference-between-centralized-and-distributed-version-control/#:~:text=The%20main%20difference%20between%20centralized,repositories%20of%20the%20local%20machines.  
+ 2. https://docs.github.com/  
  3. https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=Merging%20is%20Git's%20way%20of,merge%20into%20the%20current%20branch.]
 
 ### Overcome challenges
