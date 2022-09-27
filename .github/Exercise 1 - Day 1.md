@@ -48,6 +48,6 @@ Making a new repository on GitHub, share it with my my teammates and clone a rep
 []
 
 ### Results
-![Exersice1_Repository](00_includes/Git/Exersice1_Repository.png)
-![Repository_Permissions](00_includes/Git/Repository_Permissions.png)
-![Cloned_Repo_Hans](00_includes/Git/Cloned_Repo_Hans.png)
+![Exersice1_Repository](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/78dd06c217ba1b65c04ee1681108a6e61cd6ccd8/00_includes/Git/Exersice1_Repository.png)
+![Repository_Permissions](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/78dd06c217ba1b65c04ee1681108a6e61cd6ccd8/00_includes/Git/Repository_Permissions.png)
+![Cloned_Repo_Hans](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/78dd06c217ba1b65c04ee1681108a6e61cd6ccd8/00_includes/Git/Cloned_Repo_Hans.png)
