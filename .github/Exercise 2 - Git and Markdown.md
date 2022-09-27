@@ -30,4 +30,4 @@ Made an md-document locally on VSCode for this exersice.
 []
 
 ### Results
-![VSCode](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/bc80fb7eb0a86b18c8adc9e8299a689ef071f3e9/00_includes/Git/VSCode.png)
+![VSCode](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/048bbc1cc99893f916fbe8c865a96ee74af91afc/00_includes/Git/VSCode.png)
