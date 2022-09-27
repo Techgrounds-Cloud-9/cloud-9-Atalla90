@@ -1,7 +1,7 @@
-[Git and Markdown]
+# [Git and Markdown]
 [Make a Markdown(md) document on a text editor(VSCode).]
 
-Key terminology
+## Key terminology
 [Markdown: Is a simple Markup Language used to write plain text that is easy to read, to be basically constructed and to be converted to other formats like HTML.
 
 Markup Language: Is computer language that is used to make a constructed text.
@@ -13,10 +13,10 @@ WYSIWYM Editor: What You See Is What You Mean, the paradigm includes the text ed
 VSCode: Visual Studio Code, is a code editor developed by Microsoft.
 ]
 
-Exercise
+## Exercise
 Made an md-document locally on VSCode for this exersice.
 
-Sources
+### Sources
 [1. https://en.wikipedia.org/wiki/Markup_language
 
 2. https://www.ultraedit.com/company/blog/community/what-is-markdown-why-use-it.html#:~:text=Markdown%20is%20a%20plain%20text,%2C%20bold%2C%20italics%2C%20etc.
@@ -26,8 +26,8 @@ Sources
 4. https://visualstudio.microsoft.com/
 ]
 
-Overcome challenges
+### Overcome challenges
 []
 
-Results
+### Results
 ![VSCode](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/bc80fb7eb0a86b18c8adc9e8299a689ef071f3e9/00_includes/Git/VSCode.png)
