@@ -34,6 +34,7 @@ Clone: Downloading a copy of a certain repository on a local machine.
 ]
 
 ## Exercise
+Making a new repository on GitHub, share it with my my teammates and clone a repository of a teammate.
 ### Sources
 [1. https://pediaa.com/what-is-the-difference-between-centralized-and-distributed-version-control/#:~:text=The%20main%20difference%20between%20centralized,repositories%20of%20the%20local%20machines.
 
@@ -47,6 +48,6 @@ Clone: Downloading a copy of a certain repository on a local machine.
 []
 
 ### Results
-![Exersice1_Repository](https://user-images.githubusercontent.com/106679524/192400025-64719e5e-a88b-4ff3-a89d-e51bf8ee0d8b.png)
-![Repository_Permissions](https://user-images.githubusercontent.com/106679524/192400125-2e436bd4-4873-4e92-84ab-341e84444f88.png)
-![Cloned_Repo_Hans](https://user-images.githubusercontent.com/106679524/192400218-a7cb829e-80b6-4b34-8a48-5f49509e5ecc.png)
+![Exersice1_Repository](00_includes/Git/Exersice1_Repository.png)
+![Repository_Permissions](00_includes/Git/Repository_Permissions.png)
+![Cloned_Repo_Hans](00_includes/Git/Cloned_Repo_Hans.png)
