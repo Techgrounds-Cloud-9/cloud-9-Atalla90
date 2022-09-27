@@ -10,7 +10,11 @@ File: a single entity that contains data that is used by a program.
 
 Terminal: Is a CLI used to control a program.
 
-Home Directory: Is the main directory of a certain user on the system.]
+Home Directory: Is the main directory of a certain user on the system.
+
+Absolute Path: Is the exact route to a certain file or directory in the File System.
+
+Relative Path: Is the route to a certain file or directory in the File System, in relation to the current working directory.]
 
 ## Exercise
 Created a new directory in my Home directory, created a text file in it and navigated through the tree.
