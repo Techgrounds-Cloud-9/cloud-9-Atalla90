@@ -4,7 +4,7 @@
 ## Key terminology
 [Linux: a family of open-source operating systems that use the same kernel.
 
-GUI: Graphical User Interface, which contains dashboards where a program can be controled.
+GUI: Graphical User Interface, which contains dashboards where a program can be controlled.
 
 CLI: Command Line Interface, where a program can be controlled through entered commands.
 
