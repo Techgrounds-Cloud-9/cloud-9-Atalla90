@@ -20,7 +20,7 @@ Used the echo command to write a new sentence (line) to the new_text.txt file, a
 
 2. https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/
 
-3. 
+3. https://opensource.com/article/18/8/introduction-pipes-linux#:~:text=In%20Linux%2C%20the%20pipe%20command,to%20another%20for%20further%20processing.
 ]
 
 ### Overcome challenges
