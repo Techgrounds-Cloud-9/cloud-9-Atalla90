@@ -2,7 +2,11 @@
 [Using Crontab to add scripts as Cronjobs.]
 
 ## Key terminology
-[Write a list of key terminology with a short description. To prevent duplication you can reference to previous excercises.]
+[Cron: A daemon in Linux that facilitates scheduling tasks to run automatically according to a user's plan.
+
+Cron Job: A scheduled task that is written in in the Crontab.
+
+Crontab: A text file contains a sequence of scheduled commands.]
 
 ## Exercise
 Wrote two scripts and scheduled them as Cron Jobs. One of them writes every minute to a text file in my home directory, while the other writes weekly to a log file in /var/log.
@@ -18,10 +22,13 @@ Wrote two scripts and scheduled them as Cron Jobs. One of them writes every minu
 5. https://opensource.com/article/18/7/how-check-free-disk-space-linux
 
 6. https://stackoverflow.com/questions/82256/how-do-i-use-sudo-to-redirect-output-to-a-location-i-dont-have-permission-to-wr/16514624#16514624
-7. https://linuxize.com/post/linux-tee-command/]
+
+7. https://linuxize.com/post/linux-tee-command/
+
+8. https://www.geeksforgeeks.org/crontab-in-linux-with-examples/]
 
 ### Overcome challenges
-[It took me a while to figure out why my script couldn't write to /var/log, but in the end I figured it out in time]
+[It took me a while to figure out why my script couldn't write to /var/log, but in the end I figured it out in time.]
 
 ### Results
 ![Setting_timezone](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/d20370be767602548b7b59b1ff180852452c1a91/00_includes/Linux/Setting_timezone.png)
