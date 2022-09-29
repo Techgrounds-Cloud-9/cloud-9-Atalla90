@@ -18,7 +18,7 @@ Wrote two scripts and scheduled them as Cron Jobs. One of them writes every minu
 5. https://opensource.com/article/18/7/how-check-free-disk-space-linux
 
 6. https://stackoverflow.com/questions/82256/how-do-i-use-sudo-to-redirect-output-to-a-location-i-dont-have-permission-to-wr/16514624#16514624
-7. ]
+7. https://linuxize.com/post/linux-tee-command/]
 
 ### Overcome challenges
 [It took me a while to figure out why my script couldn't write to /var/log, but in the end I figured it out in time]
