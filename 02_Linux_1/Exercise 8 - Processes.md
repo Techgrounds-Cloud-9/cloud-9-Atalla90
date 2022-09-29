@@ -20,8 +20,11 @@ PID: The identification number of a process in Linux.]
 Installed telnetd package, started the inetd daemon, checked the status of the process and then stopped it.
 ### Sources
 [1. https://www.howtoforge.com/how-to-install-and-use-telnet-on-ubuntu/
+
 2. https://www.linuxfoundation.org/blog/blog/classic-sysadmin-how-to-kill-a-process-from-the-command-line
+
 3. https://en.wikipedia.org/wiki/Telnet
+
 4. https://www.techtarget.com/whatis/definition/variable#:~:text=In%20programming%2C%20a%20variable%20is,uses%20when%20it%20is%20running.]
 
 ### Overcome challenges
