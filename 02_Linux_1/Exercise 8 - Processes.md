@@ -14,8 +14,7 @@ Telnet: a protocol that allows connection between a system and another remote sy
 
 Variable: A container of value(s) that may change upon certain conditions or interference.
 
-PID: The identification number of a process in Linux.
-]
+PID: The identification number of a process in Linux.]
 
 ## Exercise
 Installed telnetd package, started the inetd daemon, checked the status of the process and then stopped it.
