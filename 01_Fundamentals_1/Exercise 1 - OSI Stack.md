@@ -26,7 +26,7 @@ Network layer: The third layer of the OSI model. It has on the sending end two f
 
 Transport layer: The fourth layer of the OSI model. On the sending end it receives a chunk of data from the session layer and breaks it into segments to facilitate the transfer. On the receiving end it reassembles the segments back into data that can be used in the session layer. Transport layer performs flow control and error control in communication between end hosts.
 
-Node: Any device on the network, including hosts.
+Node: Any device on the network, including hosts and network devices.
 
 Host: Any system on the network. It can perform as a server, a client or both.
 
