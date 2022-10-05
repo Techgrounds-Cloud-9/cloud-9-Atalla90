@@ -30,11 +30,11 @@ Internet Engineering Task Force (IETF): The organization that's responsible for 
 
 ## Exercise
 1. In order for your protocol to be acknowleged by IETF it has to meet the following requirements:
-A) It should determine message encoding.
-B) It should determine message sizing.
-C) It should handle message formatting.
-D) It should determine message timing.
-E) It should take message delivery options in consideration.
+A) It should determine message encoding. 
+B) It should determine message sizing. 
+C) It should handle message formatting. 
+D) It should determine message timing. 
+E) It should take message delivery options in consideration. 
 
 2. Installed Wireshark on both my own Windows system and my Ubuntu VM and captured traffic on both. On th GIU of Wireshark on my Windows I noticed that some traffic was depending on UDP protocol, which was apparently traffic from the Zoom session as it was open back then (See attached photos in "Results" section).
 
