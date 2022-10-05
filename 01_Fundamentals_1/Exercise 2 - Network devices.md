@@ -40,3 +40,4 @@ Logged in my router's configuration page. Checked the list of the connected devi
 ![Connected_devices](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/9d5515758b4c2881e617be0515b5af4a53fe5602/00_includes/Networking/Connected_devices.png)
 ![DHCP_settings(1)](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/9d5515758b4c2881e617be0515b5af4a53fe5602/00_includes/Networking/DHCP_settings(1).png)
 ![DHCP_settings(2)](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/9d5515758b4c2881e617be0515b5af4a53fe5602/00_includes/Networking/DHCP_settings(2).png)
+![DHCP_CLI](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/bcec479be5ff800ebe5d57bd493fc4992684d2e5/00_includes/Networking/DHCP_CLI.png)
