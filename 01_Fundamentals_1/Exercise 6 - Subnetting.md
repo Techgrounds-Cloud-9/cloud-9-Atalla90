@@ -14,9 +14,7 @@ CIDR: Classless Inter Domain Routing, is a way for assigning IP adresses more ef
 
 VLSM: Variable Length Subnet Masking, is the way to divide a network into subnets of various host spaces.
 
-Subnet Mask: A 32-bits number that demonstrates the available host IP addresses. It's made up by setting all the host bits is an IP address to 0s and all the network bits to 1s and then translating the binary value to decimal.
-
-]
+Subnet Mask: A 32-bits number that demonstrates the available host IP addresses. It's made up by setting all the host bits is an IP address to 0s and all the network bits to 1s and then translating the binary value to decimal.]
 
 ## Exercise
 Designed a network topology consists of 3 subnets using a network with the IP address 192.186.15.0/24
