@@ -6,6 +6,8 @@
 
 Salting: The process of adding extra characters at the end of the password before hashing it, in order to make it even more secure and more difficult to crack.
 
+Peppering: An additional step before hashing and beside salting that aimes to strengthen the password by adding extra characters to it. Pepper, unlike salt, is generaly added at the begining of a password.
+
 Rainbow Table: A database where the hashed values for common and possible passwords are stored in order to use them to crack passwords later in what's known as "Rainbow Table Attack".
 
 Bruteforce attack: a cyber attack that depends on analyzing the hash functions stored, generating hash values and comparing it to the hash values stored on the system being attacked.
@@ -25,7 +27,9 @@ MD5: MD5 Message-Digest Algorithm, is a commonly used hashing algorithm. It prod
 
 3. https://www.geeksforgeeks.org/understanding-rainbow-table-attack/
 
-4. https://www.sciencedirect.com/topics/computer-science/hashing-algorithm#:~:text=Some%20common%20hashing%20algorithms%20include,very%20commonly%20used%20hashing%20algorithm.]
+4. https://www.sciencedirect.com/topics/computer-science/hashing-algorithm#:~:text=Some%20common%20hashing%20algorithms%20include,very%20commonly%20used%20hashing%20algorithm.
+
+5. https://nordpass.com/blog/pepper-password/]
 
 ### Overcome challenges
 []
