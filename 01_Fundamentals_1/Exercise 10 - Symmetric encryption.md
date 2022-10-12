@@ -8,7 +8,7 @@ Data in motion: A data that's being trasfered between different locations. Also 
 
 Data in use: A data that's being accessed, modified or processed. That data is usually stored on a computer's RAM, and is considered the most vulnerable state of data.
 
-Cipher: Any certain technique that's used to encrypt and decrypt data. 
+Cipher: Any technique that's used to encrypt and decrypt data. 
 
 Symmetric encryption: The type of encryption where one secret key is used to both encrypt as well as decrypt data.
 
