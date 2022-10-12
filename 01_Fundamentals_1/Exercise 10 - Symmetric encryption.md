@@ -1,5 +1,5 @@
 # [Symmetric encryption]
-[Give a short summary of the subject matter.]
+[Getting to know symmetric encryption techniques and methods and apply it with teammates.]
 
 ## Key terminology
 [Data at rest: A data that's stored on a computer and (temporarily) not being transfered or processed.
