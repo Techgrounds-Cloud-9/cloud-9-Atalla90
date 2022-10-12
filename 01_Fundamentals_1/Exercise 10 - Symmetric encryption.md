@@ -10,7 +10,9 @@ Data in use: A data that's being accessed, modified or processed. That data is u
 
 Cipher: Any technique that's used to encrypt and decrypt data. 
 
-Symmetric encryption: The type of encryption where one secret key is used to both encrypt as well as decrypt data.
+Cryptography: The discipline and the practice of encrypting plain text into cipher text and decrypting it back.
+
+Symmetric encryption: The type of cryptography where one secret key is used to both encrypt as well as decrypt data.
 
 Caesar cipher: Is an ancient technique for encrypting that's traced back to the Roman empire, where Julius Caesar used to use that technique to communicate sensitive data with his officials. Caeser cipher depends on shifting each letter in a text a certain number of positions forward and replacing it with the letter in that position when encrypting, and moving it backwards for the same number of positions to get the original text back while decrypting. That number of positions is called "the shift" and should be agreed on as the key to encrypt or decrypt between the involved parties. The shift is determined based on numbering the alphabets in order from A to Z. For example; shift 2 for the letter A means that it'd be replaced with the letter C in the encrypted text.
 
