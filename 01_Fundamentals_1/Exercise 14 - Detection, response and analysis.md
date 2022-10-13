@@ -22,7 +22,7 @@ System hardening: The followed practices to strengthen the system and make it le
 
 DRaaS: Disaster Recovery as a Service, is a cloud service that offers backing up the whole infrastructure of an organization on the cloud where a disaster recovery plan will be managed without any action that needs to be taken by the business's adminstration.
 
-Hot site disaster recovery: A kind of DRaaS that's used by systems that can't afford any amount of downtime. It invloves backing up the IT infrastructure on a second server in a stand by state.
+Hot site disaster recovery: A kind of DRaaS that's used by systems that can hardly afford any amount of downtime. It invloves backing up the IT infrastructure on a second server in a stand by state.
 
 Cold site disaster recovery: A kind of DRaaS that's used by systems that invloves backing up the IT infrastructure on a second server but not in a standby state.]
 
