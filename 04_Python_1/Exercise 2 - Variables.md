@@ -9,7 +9,9 @@
 Value: A representation of data that's being used in code.]
 
 ## Exercise
+
 1. Created two variables and assigned numrical values to them and printed them to the terminal, then created a third one containing the sum of them both using the following code:
+
 ~~~
 A = 5
 B = 3
@@ -18,12 +20,14 @@ print (A+B)
 ~~~
 
 2. Created a variable with my name and used it to print a message to the terminal using the following code:
+
 ~~~
 name = "Atalla"
 print ("Hello,", name)
 ~~~
 
 3. Created a variable, changed its value several times and printed it each time using the following code:
+
 ~~~
 X = "5"
 print ("Value 1: " + X)
