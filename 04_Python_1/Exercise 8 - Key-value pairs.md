@@ -28,7 +28,7 @@ import csv
 '''
 importing os.path module to check the file's path. 
 That way we can write the headers only once when creating
-the file if it doesn't exits, otherwise we only append the
+the file if it doesn't exist, otherwise we only append the
 new user's input to the file as a new row without the headers.
 '''
 import os.path
