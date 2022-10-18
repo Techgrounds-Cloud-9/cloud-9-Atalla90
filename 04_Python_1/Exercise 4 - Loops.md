@@ -6,7 +6,7 @@
 
 [Loop: A sequence of code instructions that's meant to be conditionally repeated once, several times or infinitely. In Python there are two types of loops; "For loops" and "While loops".
 
-For loop: Repeats the sequence of instructions for certain number of times determined with a certain range.
+For loop: Repeats the sequence of instructions for a certain number of times determined with a certain range.
 
 While loop: Repeats the sequence of instructions while a certain condition is present.]
 
