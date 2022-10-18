@@ -36,7 +36,7 @@ Debugging: Keeping track of the steps in which a computer program executes a cod
 
 ## Exercise
 
-Installed Python3 interpreter and made sure Python was added to th PATH system variable. Installed VS Code. Printed "Hello world!" to the terminal.
+Installed Python3 interpreter and made sure Python was added to the PATH system variable. Installed VS Code. Printed "Hello world!" to the terminal.
 
 ### Sources
 
