@@ -64,7 +64,7 @@ Karim,Touzani,Student,TechGrounds
 
 ### Overcome challenges
 
-[]
+[I was a bit challenging to find a way to append the rows to the csv file without writing the headers every time. Using the os.path module I could solve it.]
 
 ### Results
 
