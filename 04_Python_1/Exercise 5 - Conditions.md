@@ -44,6 +44,7 @@ while True:
 ### Results
 
 [Script 1](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/3fb75d3dce0c6e88aa157a39b52c0f1af7538e06/04_Python_1/Scripts/Conditions_1.py)  
-[Script 2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/3fb75d3dce0c6e88aa157a39b52c0f1af7538e06/04_Python_1/Scripts/Conditions_2.py)  
+[Script 2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/3fb75d3dce0c6e88aa157a39b52c0f1af7538e06/04_Python_1/Scripts/Conditions_2.py)
+  
 ![Conditions_1](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/e8f2abf8607a56d19542aefb2ea2af95a2c2ceb5/00_includes/Python/Conditions_1.png)
 ![Conditions_2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/e8f2abf8607a56d19542aefb2ea2af95a2c2ceb5/00_includes/Python/Conditions_2.png)
