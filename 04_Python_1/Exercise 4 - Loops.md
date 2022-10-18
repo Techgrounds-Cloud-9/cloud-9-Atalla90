@@ -54,6 +54,7 @@ for i in arr:
 [Script 1](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/2ad8478464e595f123cac6a3f6bd31895984db04/04_Python_1/Scripts/Loops_1.py)  
 [Script 2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/2ad8478464e595f123cac6a3f6bd31895984db04/04_Python_1/Scripts/Loops_2.py)  
 [Script 3](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/2ad8478464e595f123cac6a3f6bd31895984db04/04_Python_1/Scripts/Loops_3.py)
+
 ![Loops_1](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/5e87fdbce509ee1a4b813525603390a5471ae654/00_includes/Python/Loops_1.png)
 ![Loops_2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/5e87fdbce509ee1a4b813525603390a5471ae654/00_includes/Python/Loops_2.png)
 ![Loops_3](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/5e87fdbce509ee1a4b813525603390a5471ae654/00_includes/Python/Loops_3.png)
