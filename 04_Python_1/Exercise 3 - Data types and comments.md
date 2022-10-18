@@ -69,5 +69,5 @@ print (type(age))
 [Script 1](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/1ceec9e4c5cc31c4308ef5860d3c15b42723b3c3/04_Python_1/Scripts/Data%20types%20and%20comments_1.py)  
 [Script 2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/1ceec9e4c5cc31c4308ef5860d3c15b42723b3c3/04_Python_1/Scripts/Data%20types%20and%20comments_2.py)
 
-[Data_types_1](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/888a1e0e94e0f251534a4b8916ea60aa372219e5/00_includes/Python/Data_types_1.png)
-[Data_types_2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/888a1e0e94e0f251534a4b8916ea60aa372219e5/00_includes/Python/Data_types_2.png)
+![Data_types_1](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/888a1e0e94e0f251534a4b8916ea60aa372219e5/00_includes/Python/Data_types_1.png)
+![Data_types_2](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/888a1e0e94e0f251534a4b8916ea60aa372219e5/00_includes/Python/Data_types_2.png)
