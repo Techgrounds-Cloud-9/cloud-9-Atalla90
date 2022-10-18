@@ -16,7 +16,7 @@ Programming language: A language that has a special syntax which with we can com
 
 Python: A programming language that was developed in the late 1980s by Guido van Rossum at Centrum Wiskunde en Informatica in Amsterdam. It's famous with its simple syntax and its multi-purpose usability, which make it the most used programming language among software developers. Python is an object-oriented, high-level, interpreted (can be used as compiled) programming language.
 
-Object-Oriented Programming(OOP): An approach in programming that depends on objectifying all the needed components a programmer need in the language, meaning, making them objects with properties.
+Object-Oriented Programming(OOP): An approach in programming that depends on objectifying all the needed components in the language, meaning, making them objects with properties.
 
 Interpreted language: A programming language that gets interpreted line by line through another program (interpreter) that translates it to a machine language that can be understood by a processor. It's usually more simple to use than a compiled language. Examples are; Python and JavaScript.
 
