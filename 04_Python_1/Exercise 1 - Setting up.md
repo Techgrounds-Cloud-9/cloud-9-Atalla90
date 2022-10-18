@@ -44,16 +44,20 @@ Installed Python3 interpreter and made sure Python was added to the PATH system 
 
 2. <https://www.python.org/doc/essays/blurb/>
 
-3. https://en.wikipedia.org/wiki/Integrated_development_environment
+3. <https://en.wikipedia.org/wiki/Integrated_development_environment>
 
-4. https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP#:~:text=Object%2Doriented%20programming%20(OOP)%20is%20a%20computer%20programming%20model,has%20unique%20attributes%20and%20behavior.]
+4. <https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP#:~:text=Object%2Doriented%20programming%20(OOP)%20is%20a%20computer%20programming%20model,has%20unique%20attributes%20and%20behavior>.]
 
 ### Overcome challenges
 
 []
 
 ### Results
-
+Typing "Hello world!" to the terminal can be done using the following code:
+ ~~~
+ print ("Hello world!")
+ ~~~
+ 
 [Script](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/293088ced593c156acb1b081918113ee799feb69/04_Python_1/Scripts/Setting_up.py)
 
 ![PATH_variable](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/0c8561aa959abbcca243a50fbc92c4e5006b6e95/00_includes/Python/Python_in%20_Path.png)
