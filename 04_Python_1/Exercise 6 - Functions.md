@@ -61,11 +61,11 @@ print ("The average of",x,"and", y, "is", z)
 
 ### Sources
 
-[1. https://www.geeksforgeeks.org/difference-method-function-python/#:~:text=Functions%20can%20be%20called%20only,are%20dependent%20on%20that%20class.
+[1. <https://www.geeksforgeeks.org/difference-method-function-python/#:~:text=Functions%20can%20be%20called%20only,are%20dependent%20on%20that%20class>.
 
-2. https://www.w3schools.com/python/python_functions.asp
+2. <https://www.w3schools.com/python/python_functions.asp>
 
-3. https://learnpython.com/blog/python-modules-packages-libraries-frameworks/#:~:text=A%20library%20is%20an%20umbrella,and%20other%20packages%20(subpackages).]
+3. <https://learnpython.com/blog/python-modules-packages-libraries-frameworks/#:~:text=A%20library%20is%20an%20umbrella,and%20other%20packages%20(subpackages>).]
 
 ### Overcome challenges
 
