@@ -46,7 +46,7 @@ def myfunction(x: str):
 myfunction("Atalla")
 ~~~
 
-3. Wrote a function that returns the average of its parameters and used it on the variables in given code as follows:
+3. Wrote a function that returns the average of its arguments and used it on the variables in given code as follows:
 
 ~~~
 def avg(x:float, y:float):
