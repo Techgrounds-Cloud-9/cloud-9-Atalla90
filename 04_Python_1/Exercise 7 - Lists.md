@@ -8,7 +8,7 @@
 
 Set: A built-in data structure in Python. An unordered set of values contained between curly brackets {} and separated by comma's. As the values in a set are not ordered, they have no indices and can't be accessed that way. For the same reason (and also unlike lists), sets don't support duplication of values.
 
-Tuple: A built-in data structure in Python. An ordered sequence of values contained between round brackets(). Tuples can't be modified once made. Since the values are ordered, they can be accessed through their indices and can be duplicated.]
+Tuple: A built-in data structure in Python. An ordered sequence of values contained between round brackets (). Tuples can't be modified once made. Since the values are ordered, they can be accessed through their indices and can be duplicated.]
 
 ## Exercise
 
