@@ -3,4 +3,4 @@ for i in range(len(arr)):
     if i != 4:
        print(arr[i]+arr[i+1])
     else:
-        print(arr[i]+arr[0])  
+        print(arr[i]+arr[0])
