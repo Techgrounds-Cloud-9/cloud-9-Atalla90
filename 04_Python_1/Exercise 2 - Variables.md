@@ -10,7 +10,7 @@ Value: A representation of data that's being used in code.]
 
 ## Exercise
 
-1. Created two variables and assigned numrical values to them and printed them to the terminal, then created a third one containing the sum of them both using the following code:
+1. Created two variables and assigned numerical values to them and printed them to the terminal, then created a third one containing the sum of them both using the following code:
 
 ~~~
 A = 5
