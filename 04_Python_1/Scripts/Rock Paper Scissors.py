@@ -1,5 +1,5 @@
 import random
-
+#Creating a function that takes and verifies user's input
 def verify_input():
     user = input("Type 'rock', 'paper' or 'scissors' or one of the letters 'r', 'p' or 's'\n")
     while True:
@@ -7,13 +7,13 @@ def verify_input():
             return user 
         else:       
             user = input("This is not a valid value.\nType 'rock', 'paper', or 'scissors' or one of the letters 'r', 'p' or 's'\n")
-
+#Function that generates a random choice from a list as a computer's move, prints it and returns it
 def computer_choice():
     rps = ["rock", "paper", "scissors"]
     com = random.choice(rps)
     print(com)
     return com
-
+#Function that checks for all the possible winning conditions for each side and returns the score for each round
 def winning(user, com):
     user_wins = 0
     com_wins = 0
@@ -37,7 +37,7 @@ def winning(user, com):
             user_wins += 1
 
     return user_wins, com_wins
-
+#Function that takes the score for each round, counts the total for each side and returns it
 def score_tracker(user_wins, com_wins):
     user_count = 0
     com_count = 0
@@ -47,7 +47,9 @@ def score_tracker(user_wins, com_wins):
         com_count += 1
 
     return user_count, com_count
-
+#Function that starts the game and contains all the other functions. 
+#Here we set the number of the rounds using a loop
+#We also declare a winning case or a tie
 def game():
     user_count = 0
     com_count = 0
@@ -67,7 +69,7 @@ def game():
         print("You win! Computer never sucks!")
     else:
         print("It's a tie! Go think of some other way to settle this down.")
-
+#Starting the game by calling the mother function and restarting it if the user wishes so
 game()
 while True:
     restart = input("Not convinced? Play again! Type 'yes' or 'no'\n")
