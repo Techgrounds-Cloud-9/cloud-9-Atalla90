@@ -251,7 +251,7 @@ game()
 
 ~~~
 #The same code as for the multi-players version, except for some
-#changes that I'll point out in comments to along the way
+#changes that I'll point out in comments along the way
 import random
 
 theBoard = {'1': ' ' , '2': ' ' , '3': ' ' ,
