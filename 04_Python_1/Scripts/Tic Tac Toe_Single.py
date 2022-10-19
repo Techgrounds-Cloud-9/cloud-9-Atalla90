@@ -1,3 +1,5 @@
+#The same code as for the multi-players version, except for some
+#changes that I'll point out in comments to along the way
 import random
 
 theBoard = {'1': ' ' , '2': ' ' , '3': ' ' ,
@@ -18,7 +20,7 @@ def printBoard(board):
 def game():
     turn = 'X'
     count = 0
-
+    #User is X and computer is O. We only take user's input if it's X's turn
     for i in range(10):
         if turn == 'X':
             printBoard(theBoard)
@@ -39,6 +41,9 @@ def game():
                         break
                     else:
                         continue
+        #And if it's computer's turn, we generate a random number between 1 and 9
+        # and check if it's not an already taken square. When valid we assign 
+        # O as a value and fill the square            
         else:
             move = random.randint(1,9)
             move = str(move)
