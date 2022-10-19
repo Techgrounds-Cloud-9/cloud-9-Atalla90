@@ -4,7 +4,7 @@
 
 ## Key terminology
 
-[Conditional: A statement that's used to test for the presence of a certain condition and based on that directs a part of the code to one direction or the other. A condetional in Python can be implemented using "if.. else" statements of "if.. elif.. else" statements.]
+[Conditional: A statement that's used to test for the presence of a certain condition and based on that directs a part of the code to one direction or the other. A condetional in Python can be implemented using "if.." statements in different variations.]
 
 ## Exercise
 
