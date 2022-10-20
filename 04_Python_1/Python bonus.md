@@ -207,7 +207,7 @@ bar = 2
 print(foo**bar)
 ~~~
 
-Fixed code: The multiplying sign just one * should be used.
+Fixed code: The multiplying sign just one asterisk * should be used.
 
 ~~~
 foo = 10
