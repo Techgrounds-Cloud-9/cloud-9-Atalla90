@@ -263,7 +263,7 @@ the number is 20
 print('the number is' + 20)
 ~~~
 
-Fixed code: the ingteger 20 should be a string in order for it to be incremented with another string.
+Fixed code: the ingteger 20 should be a string in order for it to be concatenated with another string.
 
 ~~~
 print('the number is ' + '20')
