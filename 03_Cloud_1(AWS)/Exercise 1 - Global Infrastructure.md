@@ -12,9 +12,15 @@ Hypervisor: A hardware or software that is used to create virtual machines by is
 
 Virtual Machine(VM): An operating system with its applications that runs on another system and uses an isolated part of the resources.
 
-AWS: Amazon Web Services, is the leading Cloud Services Provider (CSP) in the market. AWS was founded between 2000 and 2005 by Jeff Bezos, the owner and the former CEO of Amazon, and is officially active in the market as the first Cloud platform in the world since 2006. AWS offers as of now more than 200 Cloud services.
+Data Center: A facility where servers and computing systems are housed.
 
-Data Center: A facility where servers and computing systems are housed and interconnected.
+IaaS: Infrastructure as a Service, is one of the three main types of Cloud Computing. It provides the customer with a whole IT infrastructure hosted on the cloud. IaaS gives the cutomer the highest control over their IT resources.
+
+PaaS: Platform as a Service, is one of the three main types of Cloud Computing. It provide a fully managed infrastructure which allows the customer to focus on deploying and managing their applications.
+
+SaaS: Software as a Service, is one of the three main types of Cloud Computing. It provides a complete product for end-users to use. With SaaS, the end-user is only concerned about how to use the application, not with managing, deploying or maintaining the infrastructure or the application.
+
+AWS: Amazon Web Services, is the leading Cloud Services Provider (CSP) in the market. AWS was founded between 2000 and 2005 by Jeff Bezos, the owner and the former CEO of Amazon, and is officially active in the market as the first Cloud platform in the world since 2006. AWS offers as of now more than 200 Cloud services.
 
 Availability Zone(AZ): One or more AWS Data Centers which have redundant (backup) power and connectivity within a region.
 
