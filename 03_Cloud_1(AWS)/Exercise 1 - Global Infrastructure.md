@@ -46,7 +46,7 @@ A) Sometimes you may have to choose a certain region rather than another due to 
 
 B) You may also take latency in consideration. If the data needs to be accessed by the end-user with minimum latencey, then maybe it's best to have it deployed in a region that's as close to your end-users as possible.
 
-C) Another factors to consider is the cost, as it costs can vary widely from a region to the other.
+C) Another factors to consider is the cost, as the costs can vary widely from a region to the other.
 
 D) You should also check where the new AWS services and features that you may need to use are deployed, as AWS new services and features get deployed to different AWS regions gradually.
 
