@@ -10,7 +10,7 @@
 
 The Six benefits of moving to a massive Cloud like AWS are:
 
-1) You trade part of your Capital Expenditures for variable Opertational Expenses. Meaning that you don't have to spend on your IT infrastructure as part or your enterprise's capital, instead you can pay only for the resources you use and as much as you use them.
+1) You trade part of your Capital Expenditures for variable Opertational Expenses. Meaning that you don't have to spend on your IT infrastructure as a part or your enterprise's capital, instead you can pay only for the resources you use and as much as you use them.
 
 2) You benefit from massive economies of scales. Meaning that even those variable expenses you have on your IT resources can decrease significantly when sharing the same global cloud infrastructure with a massive amount of people and businesses.
 
