@@ -1,6 +1,6 @@
 # [6 Advantages of the cloud]
 
-[Learning about the advantages .]
+[Learning about the advantages of Cloud Computing.]
 
 ## Key terminology
 
