@@ -13,7 +13,7 @@ C) SageMaker Savings Plans: Which allows saving up to 64% on the costs of using 
 
 Pay less by using more: It allows the customer to pay less as their usage of a service increases by tiering pricing.
 
-Economies of scale: A cnocept that refers to the cost advantages an enterprise can have when operating and producing on larger scales. As the fixed costs, such as; administration costs, get spread over more production units, the total cost of production decreases, from which the enterprise as well as the customer may benefit.
+Economies of scale: A concept that refers to the cost advantages an enterprise can have when operating and producing on larger scales. As the fixed costs, such as; administration costs, get spread over more production units, the total cost of production decreases, from which the enterprise as well as the customer may benefit.
 
 Total Cost of Ownership: The cost of buying something add to the costs of operating and maintaining it during its life span.
 
