@@ -14,7 +14,7 @@ The Six benefits of moving to a massive Cloud like AWS are:
 
 2) You benefit from massive economies of scales. Meaning that even those variable expenses you have on your IT resources can decrease significantly when sharing the same global cloud infrastructure with a massive amount of people and businesses.
 
-3) You don't have to own resources that you don't know if you're going to use, neither you'll have to be restricted in production due having limited fixed IT resources. With Cloud services you can scale your capacity up and down based on your business needs.
+3) You don't have to own resources that you don't know if you're going to use, neither you'll have to be restricted in production due to having limited fixed IT resources. With Cloud services you can scale your capacity up and down based on your business needs.
 
 4) You increase the productivity of your business drastically by increasing the agility and the speed of your work flow, as Cloud enabels you to access the needed IT resources instantly.
 
