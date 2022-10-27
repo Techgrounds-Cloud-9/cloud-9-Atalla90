@@ -4,7 +4,7 @@
 
 ## Key terminology
 
-[Elastic Block Store (EBS): A part of Amazon EC2. It enables the user of creating virtual storage devices, called Volumes, that can be formatted, configured and mounted such as any storage device. AWS recommends using EBS for data that needs to be quickly accessible and requires long-term persistence. An EBS volume created in one AZ has to be attached to an EC2 instance in the same AZ.
+[Elastic Block Store (EBS): A part of Amazon EC2. It enables the user to create virtual storage devices, called Volumes, that can be formatted, configured and mounted such as any storage device. AWS recommends using EBS for data that needs to be quickly accessible and requires long-term persistence. An EBS volume created in one AZ has to be attached to an EC2 instance in the same AZ.
 
 SSD: Solid-State Drive, is a storage device that uses flash-based memory to store the data, making it faster in storing the data than the traditional HDD.
 
@@ -12,9 +12,9 @@ HDD: Hard Drive Disk, is an older generation of storage devices that are usually
 
 Throughput: The amount of data a system can process in a given amount of time.
 
-Root volume: An EBS volume the gets created when creating the EC2 instance. It acts like a built-in storage device of the instance. A root volume can't be detached when the instance is running.
+Root volume: An EBS volume gets created when creating the EC2 instance. It acts like a built-in storage device of the instance. A root volume can't be detached when the instance is running.
 
-Non-root volume: An EBS volume that gets created separatly from any instances and can be attached with and detached from any instance in the same AZ, like an external storage device.
+Non-root volume: An EBS volume that gets created separately from any instances and can be attached with and detached from any instance in the same AZ, like an external storage device.
 
 IOPS: Input/output Operations Per Second, is the measurement of the performance of the reading and writing processes on a storage device.
 
