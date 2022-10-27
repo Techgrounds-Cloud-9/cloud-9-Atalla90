@@ -4,7 +4,7 @@
 
 ## Key terminology
 
-[Pay-as-you-go: A feature of AWS pricing model. It allows the cutomer to pay only for the capacity that they use by scaling it up or down according to their needs.
+[Pay-as-you-go: A feature of AWS pricing model. It allows the customer to pay only for the capacity that they use by scaling it up or down according to their needs.
 
 Save when you commit: A feature of AWS pricing model. It allows the customer to save up to 72% on the computing and Machine Learning services that they use compared to on-demand pricing, in exchange for a one or three year commitment of hourly expenditure. This feature is currently offered in three types of savings plans:  
 A) Compute Savings Plans: Which allows saving up to 62% on the costs of using AWS Lambda, AWS Fargate and any AWS EC2 instances of any size, type or tenancy in any region and any availability zone running with any operating system.  
@@ -15,9 +15,9 @@ Pay less by using more: It allows the customer to pay less as their usage of a s
 
 Economies of scale: A concept that refers to the cost advantages an enterprise can have when operating and producing on larger scales. As the fixed costs, such as; administration costs, get spread over more production units, the total cost of production decreases, from which the enterprise as well as the customer may benefit.
 
-Total Cost of Ownership: The cost of buying something add to the costs of operating and maintaining it during its life span.
+Total Cost of Ownership: The cost of buying something added to the costs of operating and maintaining it during its lifespan.
 
-Capital Expenditures (CapEx): The major expenditures an enterprise make for long term purposes. CapEx can be physical fundamental assets, such as; buildings and equipment.
+Capital Expenditures (CapEx): The major expenditures an enterprise makes for long term purposes. CapEx can be physical fundamental assets, such as; buildings and equipment.
 
 Operational expenditures (OpEx): The day-to-day regular costs of an operating enterprise. It includes, for example, salaries and rents.
 
