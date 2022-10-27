@@ -26,8 +26,6 @@ Availability Zone(AZ): One or more AWS Data Centers which have redundant (backup
 
 Region: A physical locations where several AWS AZs are clustered, located within 100 km of each other and interconnected with high-bandwidth, low-latency networking over metro fibers.
 
-Amazon CloudFront: A web service that enables its user of delivering their content with low-latency to their end-users through a worldwide network of data centers called Edge Locations.
-
 Edge Location: The location where data gets cached in order for it to be delivered by CloudFront with low-latency to end-users. AWS Edge Locations are located in many of the major cities around the world.
 
 Regional Edge Cache: An Edge Location that has a larger cache-width than a global Edge Location. It sits between an original server and a global Edge Location to improve the content delivery performance even further by making the content available closer to the end-user for longer.
@@ -37,8 +35,6 @@ AWS Local Zones: Areas where you can use a selection of AWS services like storag
 AWS Wavelength Zones: Areas where AWS storage and computing services are embeded in 5G networks to help developers building mobile applications that require as minimum latency as possible.
 
 AWS Outposts: A new AWS product announced in 2018, which implies deploying a fully managed AWS infrastructure and a pool of AWS storage and computing services at the customer's site. That way a cutomer can have a hybrid cloud that integrates AWS services in their own on-premise, and have a smooth, consistent hybrid experience.
-
-IAM: AWS Identity and Access Management, is an AWS service that is used for the authentication and the authorization of a customer's access to AWS resources.
 
 RDS: Amazon Relational Database Service, is an AWS service that is used to deploy and mainatin SQL databases, using different databse engines from which the cutomer can choose.]
 
