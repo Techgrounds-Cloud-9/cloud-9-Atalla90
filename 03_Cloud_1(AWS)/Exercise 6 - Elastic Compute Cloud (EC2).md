@@ -8,9 +8,9 @@
 
 Amazon Machine Images (AMI): A software image provided by AWS and contains all the required information to run an instance
 
-AWS Command Line Interface (CLI): A command line interface the can be specifically used to manage the resources in AWS.
+AWS Command Line Interface (CLI): A command line interface that can be specifically used to manage the resources in AWS.
 
-Spot Instances: Unused EC2 instances that the user can request with a highly reduced costs.
+Spot Instances: Unused EC2 instances that the user can request with a highly reduced cost.
 
 EC2 Fleet: A feature that allows the user to configure and deploy a fleet (group) of EC2 instances with a single API call. Instances of the fleet can be from different types and across different AZs.]
 
