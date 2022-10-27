@@ -10,7 +10,7 @@ AWS Lambda: A core AWS serverless compute service. It allows its user to run the
 
 AWS Elastic Beanstalk: A core AWS PaaS compute service. It allows its user to run web applications, written in one of the supported languages, by just uploading a version of the application while the service takes care of provisioning the needed infrastructure, including for example; EC2 instances. The user then gets to control parts of that infrastructure if needed.
 
-Amazon VPC: Amazon Virtual Private Cloud, is a core AWS networking service. It enables its user of making a virtual network that contains all their resources and resembles a network that they would have in their own data canter. Amazon VPC has a lot of features, most notably; subnetting, which allows the user to divide their VPC into subnets and route the traffic through NAT Gateways or an internet Gateway.
+Amazon VPC: Amazon Virtual Private Cloud, is a core AWS networking service. It enables its users to make a virtual network that contains all their resources and resembles a network that they would have in their own data center. Amazon VPC has a lot of features, most notably; subnetting, which allows the user to divide their VPC into subnets and route the traffic through NAT Gateways or an internet Gateway.
 
 Amazon Route 53: A core AWS networking service. It works as a Domain Name System(DNS) that the user can use for domain name registration, DNS routing and for health checking of the resources.
 
@@ -18,17 +18,17 @@ Amazon S3: Amazon Simple Storage Service, is a core AWS storage service. It allo
 
 Amazon S3 Glacier: A core AWS storage service. It allows the user to store their data in containers called vaults for a low cost. Data stored in S3 Glacier vault is data that's rarely accessed. S3 Glacier is typically used for backup and archiving. S3 Glacier storage is divided into three classes; S3 Glacier Instant Retrieval, S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive.
 
-Amazon CloudFront: A core AWS networking service. It enables its user of delivering their content with low-latency to their end-users by caching that content in Edge Locations that are located nearby the end-users.
+Amazon CloudFront: A core AWS networking service. It enables its user to deliver their content with low-latency to their end-users by caching that content in Edge Locations that are located nearby the end-users.
 
 Amazon RDS: Amazon Relational Database Service, is a core AWS database service. It provides the user with a fully managed SQL databases in the form of DB instances. A DB instance can run one of the supported DB engines. You can optionally gain more control and more responsibility over the database with the shared responsibility model of Amazon RDS Custom.
 
-Amazon DynamoDB: A core AWS database service. It provides the user with fully managed NoSQL database. The database consists of table, with each table consisting of items and each item having attributes, i.e key-value pairs.
+Amazon DynamoDB: A core AWS database service. It provides the user with a fully managed NoSQL database. The database consists of tables, with each table consisting of items and each item having attributes, i.e key-value pairs.
 
 AWS CloudFormation: A core AWS service. It provides the user with a full set up and configuration of their AWS resources. The user needs only to provide a template (in JSON or YAML) of all the resources they need to have in their stack.
 
 IAM: AWS Identity and Access Management, is an AWS core service that is used for the authentication and the authorization of a customer's access to AWS resources.
 
-Well-Architected Framework: A set of key principles that should be used as a guide line for designing and running a workload in the cloud. AWS Well-Architected Framework consists of 6 pillars; Operational excellence, security, reliability, performance efficiency, Cost optimization and sustainability.]
+Well-Architected Framework: A set of key principles that should be used as a guideline for designing and running a workload in the cloud. AWS Well-Architected Framework consists of 6 pillars; Operational excellence, security, reliability, performance efficiency, Cost optimization and sustainability.]
 
 ## Exercise
 
