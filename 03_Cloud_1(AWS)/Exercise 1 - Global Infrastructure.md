@@ -34,9 +34,7 @@ AWS Local Zones: Areas where you can use a selection of AWS services like storag
 
 AWS Wavelength Zones: Areas where AWS storage and computing services are embedded in 5G networks to help developers building mobile applications that require as minimum latency as possible.
 
-AWS Outposts: A new AWS product announced in 2018, which implies deploying a fully managed AWS infrastructure and a pool of AWS storage and computing services at the customer's site. That way a customer can have a hybrid cloud that integrates AWS services in their own on-premises, and have a smooth, consistent hybrid experience.
-
-RDS: Amazon Relational Database Service, is an AWS service that is used to deploy and maintain SQL databases, using different database engines from which the customer can choose.]
+AWS Outposts: A new AWS product announced in 2018, which implies deploying a fully managed AWS infrastructure and a pool of AWS storage and computing services at the customer's site. That way a customer can have a hybrid cloud that integrates AWS services in their own on-premises, and have a smooth, consistent hybrid experience.]
 
 ## Exercise
 
