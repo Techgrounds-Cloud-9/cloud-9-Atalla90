@@ -60,9 +60,9 @@ B) Created an Auto Scaling Group with the name "Lab ASG", "Lab ELB" Load Balance
 
 ### Results
 
+![Lab_ELB](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/34d837ac4bce8df44f7c07a6ad9d7923e992de63/00_includes/Cloud(AWS)/Lab_ELB.png)  
 ![Lab_ASG(1)](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/34d837ac4bce8df44f7c07a6ad9d7923e992de63/00_includes/Cloud(AWS)/Lab_ASG(1).png)  
 ![Lab_ASG(2)](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/34d837ac4bce8df44f7c07a6ad9d7923e992de63/00_includes/Cloud(AWS)/Lab_ASG(2).png)  
-![Lab_ELB](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/34d837ac4bce8df44f7c07a6ad9d7923e992de63/00_includes/Cloud(AWS)/Lab_ELB.png)  
 ![Launch_Configuration](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/34d837ac4bce8df44f7c07a6ad9d7923e992de63/00_includes/Cloud(AWS)/Launch_Configuration.png)  
 ![CloudWatch_Metrics](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/34d837ac4bce8df44f7c07a6ad9d7923e992de63/00_includes/Cloud(AWS)/CloudWatch_Metrics.png)  
 ![Load_LB](https://github.com/Techgrounds-Cloud-9/cloud-9-Atalla90/blob/34d837ac4bce8df44f7c07a6ad9d7923e992de63/00_includes/Cloud(AWS)/Load_LB.png)  
