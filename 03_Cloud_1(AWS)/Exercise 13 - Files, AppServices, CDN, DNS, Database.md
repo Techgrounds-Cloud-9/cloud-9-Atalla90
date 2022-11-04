@@ -12,7 +12,7 @@ CloudFront distribution: A configuration the customer makes to specify the origi
 
 Point Of Presence(POP): An Edge Location or a Regional Edge Cache where content gets cached by Amazon CloudFront in order to be delivered faster.
 
-Domain Name: The user-friendly name of a website, for example; www.website.com
+Domain Name: The user-friendly name of a website, for example; website.com
 
 Registrar: A company that receives domain name registration requests for certain Top-level domains, verifying them and forwards them to the registry.
 
