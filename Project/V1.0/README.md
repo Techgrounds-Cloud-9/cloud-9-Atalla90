@@ -23,7 +23,7 @@ M) Most of the IAM roles and policies that are required for the resources to fun
 
 - Before attempting to deploy the app, make sure you have the following requirements satisfied:  
 - Install AWS CLI on your system, by downloading the installer for your OS from: [AWS CLI installation page.](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html)  
-- Assuming you already have an AWS account where you want create the environment for the app, you should obtain an Access Key ID and a Secret Access Key for your AWS user. Note that it's not recommended to obtain such credentials for the root user. Therefore, make sure you have an IAM user with Adminstrator's permissions.  
+- Assuming you already have an AWS account where you want to create the environment for the app, you should obtain an Access Key ID and a Secret Access Key for your AWS user. Note that it's not recommended to obtain such credentials for the root user. Therefore, make sure you have an IAM user with Adminstrator's permissions.  
 When you're all set you can run the following command to log into your AWS environment:  
 
 ```
