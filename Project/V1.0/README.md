@@ -9,8 +9,8 @@ D) An EC2 instance that works as a management server and runs Windows Server 202
 E) A key-pair for each server that gets generated and stored in Systems Manager's Parameter Store.  
 F) Each subnet where one of the servers resides is protected with a NACL that allows only the inbound and outbound traffic needed for the respective server to perform its function.  
 G) A VPC peering connects both VPC's with each other, with the CIDR-blocks of only the two subnets where the servers reside registered in each other's route tables.  
-H) Each server is protected with a security group that allows only the needed inbound traffic and all outbound traffic.  
-I) A Bash script contains the post-deployment script needed to download, install and configure Apache web server on the web server EC2 instance. The script is uploaded as an asset to the CDK assets S3 Buckets. The web server then reads the Shell script and executes it when the app is deployed. The assets Bucket is encrypted (AWS managed) and is not publicly accessible.  
+H) Each server is protected with a security group that allows only the needed inbound traffic and all the outbound traffic.  
+I) A Bash script contains the post-deployment script needed to download, install and configure Apache web server on the web server EC2 instance. The script is uploaded as an asset to the CDK assets S3 Buckets. The web server then reads the Bash script and executes it when the app is deployed. The assets Bucket is encrypted (AWS managed) and is not publicly accessible.  
 J) An AWS Backup Plan and Vault for daily backing up the webserver at 00:00. Each backup gets retained for 7 days.  
 K) KMS encryption keys that encrypt the EBS Volumes for both servers and the Backup Vault.  
 L) Only the IP addresses of home and office are allowed to make RDP connection with the management server, and only the management server is allowed to make an SSH connection with the webserver.  
