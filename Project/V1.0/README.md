@@ -1,5 +1,6 @@
 
 ## Welcome to Atalla-Techgrounds project V1.0
+
 -This is an IaC project using AWS CDK in Python.  
 -This app deploys an AWS infrastructure consisting of:  
 A) 2 VPC's in region eu-central-1(Frankfurt), as the AZ's where the subnets would reside are AZ's of that region. To change the region you'll have to change the AZ's in the code accordingly. CIDR-blocks used for the VPC's are 10.10.10.0/24 and 10.20.20.0/24.  
@@ -18,7 +19,30 @@ M) Most of the IAM roles and policies that are required for the resources to fun
 
 ## To use the app
 
+### Prerequisites
+
+- Before attempting to deploy the app, make sure you have the following requirements satisfied:  
+- Install AWS CLI on your system, by downloading the installer for your OS from: [AWS CLI installation page.](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html)  
+- Assuming you already have an AWS account where you want create the environment for the app, you should obtain an Access Key ID and a Secret Access Key for your AWS user. Note that it's not recommended to obtain such credentials for the root user. Therefore, make sure you have an IAM user with Adminstrator's permissions.  
+When you're all set you can run the following command to log into your AWS environment:  
+
+```
+aws configure
+```  
+
+- Install Node.js (>= 10.13.0, except for versions 13.0.0 - 13.6.0). You can downlaod the installer from: [The official Node.Js download page.](https://nodejs.org/en/)  
+- Install AWS CDK Toolkit by running:  
+
+```
+npm install -g aws-cdk
+```
+
+- Install Python and make sure you have it in your PATH environment variable. You can download the installer from: [The official Python download page](https://www.python.org/downloads/)  
+
+### Using the app
+
 1- First you should create your Python Virtual Environment for the app by running the command:
+
 ```
 python -m venv .venv
 ```
@@ -35,7 +59,9 @@ For Microsoft Windows:
 ```
 % .venv\Scripts\activate.bat
 ```
+
 Or:
+
 ```
 % .venv\Scripts\activate.ps1
 ```
@@ -46,22 +72,42 @@ Or:
 pip install -r requirements.txt
 ```
 
-At this point you can now synthesize the CloudFormation template for this code.
+4- Now is a good time for synthesising the CloudFormation template for the app by running:
 
 ```
 cdk synth
+```  
+5- Then bootstrapping the environment, which uploads the assets CloudFormation will use to deploy our infrastructure, by running:  
 ```
+cdk bootstrap
+```  
+6- To make sure everything is in the right order, code wise, you can run:  
+```
+cdk ls
+```  
+which will list the available stacks to be deployed in this app. You should be able to see the following in your terminal:  
+```
+ProjectAtallaKmsStack
+ProjectAtallaVpcStack
+ProjectAtallaBackupStack
+```  
+7- Then you can deploy each stack separately by running:  
+```
+cdk deploy <Stack Name>
+```
+Or deploy the whole app by running:  
+```
+cdk deploy --all
+```
+
 
 To add additional dependencies, for example other CDK libraries, just add
 them to your `setup.py` file and rerun the `pip install -r requirements.txt`
 command.
 
-## Useful commands
+### Useful commands
 
-* `cdk ls`          list all stacks in the app
-* `cdk synth`       emits the synthesized CloudFormation template
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk docs`        open CDK documentation
+- `cdk diff`        compare deployed stack with current state
+- `cdk docs`        open CDK documentation
 
 Enjoy!
