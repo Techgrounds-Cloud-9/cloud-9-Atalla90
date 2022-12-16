@@ -1,0 +1,549 @@
+{
+ "Resources": {
+  "vpcatallaweb4BEE7EE3": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.10.10.0/24",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "vpc-atalla-web"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/Resource"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1Subnet9196B15F": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "AvailabilityZone": "eu-central-1a",
+    "CidrBlock": "10.10.10.0/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public-subnet"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet1/Subnet"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1RouteTable298557A0": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet1/RouteTable"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1RouteTableAssociation3DD1AC3C": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1RouteTable298557A0"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet1/RouteTableAssociation"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1DefaultRoute1ADB47E5": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1RouteTable298557A0"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "vpcatallawebIGW935096D2"
+    }
+   },
+   "DependsOn": [
+    "vpcatallawebVPCGWDBAC3C2F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet1/DefaultRoute"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2SubnetF3A7515D": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "AvailabilityZone": "eu-central-1b",
+    "CidrBlock": "10.10.10.128/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public-subnet"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet2/Subnet"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet2/RouteTable"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2RouteTableAssociation908E52EA": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet2SubnetF3A7515D"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet2/RouteTableAssociation"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2DefaultRoute5501E451": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "vpcatallawebIGW935096D2"
+    }
+   },
+   "DependsOn": [
+    "vpcatallawebVPCGWDBAC3C2F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/public-subnetSubnet2/DefaultRoute"
+   }
+  },
+  "vpcatallawebIGW935096D2": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "vpc-atalla-web"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/IGW"
+   }
+  },
+  "vpcatallawebVPCGWDBAC3C2F": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "InternetGatewayId": {
+     "Ref": "vpcatallawebIGW935096D2"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/vpc-atalla-web/VPCGW"
+   }
+  },
+  "webserverInstanceSecurityGroup057E5061": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "ProjectAtallaWsStack/web_server/InstanceSecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaWsStack/web_server"
+     }
+    ],
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/web_server/InstanceSecurityGroup/Resource"
+   }
+  },
+  "webserverInstanceRoleB42A7E22": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaWsStack/web_server"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/web_server/InstanceRole/Resource"
+   }
+  },
+  "webserverInstanceProfileA537705D": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "webserverInstanceRoleB42A7E22"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/web_server/InstanceProfile"
+   }
+  },
+  "webserverA71B539D": {
+   "Type": "AWS::EC2::Instance",
+   "Properties": {
+    "AvailabilityZone": "eu-central-1a",
+    "IamInstanceProfile": {
+     "Ref": "webserverInstanceProfileA537705D"
+    },
+    "ImageId": {
+     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "InstanceType": "t3.micro",
+    "SecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "webserverInstanceSecurityGroup057E5061",
+       "GroupId"
+      ]
+     }
+    ],
+    "SubnetId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaWsStack/web_server"
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "#!/bin/bash"
+    }
+   },
+   "DependsOn": [
+    "webserverInstanceRoleB42A7E22"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/web_server/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/12OwW7CQAxEv4X7ZktBlXpFOSBuqwRxrZzFCJfERrteoSjKvzcJpKl6sv1mrJmN/dja9QoeMfPnW1ZTZbtSwd/MgL469Bvbne7e5Bc+udy4VNXky1Qx6siWrZCkeISqxoUvbBejeAIl4V/zuBxYMQzOPSg+oH3FvK6dDkWuDbKaA0cF9mhK9CmQtvsg6T4l/QeztTcEje0KeTaa5yy7IBeqse9NgVFS8JPqIECDQ6fp5Y+QC59prN8b1+pV+G1r39f2c/UdibKQWKlBWzznD6v3UOdVAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaWsStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Parameters": {
+  "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+   "Default": "/aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

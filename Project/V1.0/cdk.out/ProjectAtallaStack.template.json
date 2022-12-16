@@ -1,0 +1,1224 @@
+{
+ "Resources": {
+  "vpcatallaweb4BEE7EE3": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.10.10.0/24",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "vpc-atalla-web"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/Resource"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1Subnet9196B15F": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "AvailabilityZone": "eu-central-1a",
+    "CidrBlock": "10.10.10.0/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public-subnet"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet1/Subnet"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1RouteTable298557A0": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet1/RouteTable"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1RouteTableAssociation3DD1AC3C": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1RouteTable298557A0"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet1/RouteTableAssociation"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet1DefaultRoute1ADB47E5": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1RouteTable298557A0"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "vpcatallawebIGW935096D2"
+    }
+   },
+   "DependsOn": [
+    "vpcatallawebVPCGWDBAC3C2F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet1/DefaultRoute"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2SubnetF3A7515D": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "AvailabilityZone": "eu-central-1b",
+    "CidrBlock": "10.10.10.128/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public-subnet"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet2/Subnet"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet2/RouteTable"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2RouteTableAssociation908E52EA": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet2SubnetF3A7515D"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet2/RouteTableAssociation"
+   }
+  },
+  "vpcatallawebpublicsubnetSubnet2DefaultRoute5501E451": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "vpcatallawebIGW935096D2"
+    }
+   },
+   "DependsOn": [
+    "vpcatallawebVPCGWDBAC3C2F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/public-subnetSubnet2/DefaultRoute"
+   }
+  },
+  "vpcatallawebIGW935096D2": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "vpc-atalla-web"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/IGW"
+   }
+  },
+  "vpcatallawebVPCGWDBAC3C2F": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    },
+    "InternetGatewayId": {
+     "Ref": "vpcatallawebIGW935096D2"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-web/VPCGW"
+   }
+  },
+  "webaclA21B3BBA": {
+   "Type": "AWS::EC2::NetworkAcl",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/Resource"
+   }
+  },
+  "webaclDefaultAssociationProjectAtallaStackvpcatallawebpublicsubnetSubnet146C7C54AD8024113": {
+   "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/DefaultAssociationProjectAtallaStackvpcatallawebpublicsubnetSubnet146C7C54A/Resource"
+   }
+  },
+  "webaclrulehttpingressA06D81D3": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 10,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": false,
+    "PortRange": {
+     "From": 80,
+     "To": 80
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-http-ingress/Resource"
+   }
+  },
+  "webaclrulehttpsingress895B3CF1": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 20,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": false,
+    "PortRange": {
+     "From": 443,
+     "To": 443
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-https-ingress/Resource"
+   }
+  },
+  "webaclrulesshingressEFAB5ADE": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 30,
+    "CidrBlock": "10.20.20.128/25",
+    "Egress": false,
+    "PortRange": {
+     "From": 22,
+     "To": 22
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-ssh-ingress/Resource"
+   }
+  },
+  "webaclrulerdpingressA26D6648": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 40,
+    "CidrBlock": "10.20.20.128/25",
+    "Egress": false,
+    "PortRange": {
+     "From": 3389,
+     "To": 3389
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-rdp-ingress/Resource"
+   }
+  },
+  "webaclruleegressB03852F1": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 50,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": true,
+    "PortRange": {
+     "From": 1024,
+     "To": 65535
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-egress/Resource"
+   }
+  },
+  "webaclrulehttpingressipv667F01DD1": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 60,
+    "Egress": false,
+    "Ipv6CidrBlock": "::/0",
+    "PortRange": {
+     "From": 80,
+     "To": 80
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-http-ingress-ipv6/Resource"
+   }
+  },
+  "webaclrulehttpsingressipv6876EB497": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 70,
+    "Egress": false,
+    "Ipv6CidrBlock": "::/0",
+    "PortRange": {
+     "From": 443,
+     "To": 443
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-https-ingress-ipv6/Resource"
+   }
+  },
+  "webaclruleegressipv6A69F45A8": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "webaclA21B3BBA"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 80,
+    "Egress": true,
+    "Ipv6CidrBlock": "::/0",
+    "PortRange": {
+     "From": 1024,
+     "To": 65535
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/web-acl/rule-egress-ipv6/Resource"
+   }
+  },
+  "webSG9F367DE6": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "ProjectAtallaStack/webSG",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "from 0.0.0.0/0:1024-65535",
+      "FromPort": 1024,
+      "IpProtocol": "tcp",
+      "ToPort": 65535
+     },
+     {
+      "CidrIpv6": "::/0",
+      "Description": "from ::/0:1024-65535",
+      "FromPort": 1024,
+      "IpProtocol": "tcp",
+      "ToPort": 65535
+     }
+    ],
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "from 0.0.0.0/0:80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     },
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "from 0.0.0.0/0:443",
+      "FromPort": 443,
+      "IpProtocol": "tcp",
+      "ToPort": 443
+     },
+     {
+      "CidrIp": "10.20.20.128/25",
+      "Description": "from 10.20.20.128/25:22",
+      "FromPort": 22,
+      "IpProtocol": "tcp",
+      "ToPort": 22
+     },
+     {
+      "CidrIp": "10.20.20.128/25",
+      "Description": "from 10.20.20.128/25:3389",
+      "FromPort": 3389,
+      "IpProtocol": "tcp",
+      "ToPort": 3389
+     },
+     {
+      "CidrIpv6": "::/0",
+      "Description": "from ::/0:80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     },
+     {
+      "CidrIpv6": "::/0",
+      "Description": "from ::/0:443",
+      "FromPort": 443,
+      "IpProtocol": "tcp",
+      "ToPort": 443
+     }
+    ],
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/webSG/Resource"
+   }
+  },
+  "vpcatallaadmin09930B01": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.20.20.0/24",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "vpc-atalla-admin"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/Resource"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet1Subnet8FCCAAC4": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    },
+    "AvailabilityZone": "eu-central-1a",
+    "CidrBlock": "10.20.20.0/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public-subnet"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet1/Subnet"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet1RouteTable62F1F1C8": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet1/RouteTable"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet1RouteTableAssociation42FF1452": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallaadminpublicsubnetSubnet1RouteTable62F1F1C8"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallaadminpublicsubnetSubnet1Subnet8FCCAAC4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet1/RouteTableAssociation"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet1DefaultRoute8EEB320C": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallaadminpublicsubnetSubnet1RouteTable62F1F1C8"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "vpcatallaadminIGWB761A07F"
+    }
+   },
+   "DependsOn": [
+    "vpcatallaadminVPCGW3324FAEC"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet1/DefaultRoute"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet2Subnet1D7DDB73": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    },
+    "AvailabilityZone": "eu-central-1b",
+    "CidrBlock": "10.20.20.128/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public-subnet"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet2/Subnet"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet2RouteTableA1872FC3": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet2/RouteTable"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet2RouteTableAssociation00D7C1B5": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallaadminpublicsubnetSubnet2RouteTableA1872FC3"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallaadminpublicsubnetSubnet2Subnet1D7DDB73"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet2/RouteTableAssociation"
+   }
+  },
+  "vpcatallaadminpublicsubnetSubnet2DefaultRouteEF5A2069": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "vpcatallaadminpublicsubnetSubnet2RouteTableA1872FC3"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "vpcatallaadminIGWB761A07F"
+    }
+   },
+   "DependsOn": [
+    "vpcatallaadminVPCGW3324FAEC"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/public-subnetSubnet2/DefaultRoute"
+   }
+  },
+  "vpcatallaadminIGWB761A07F": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "vpc-atalla-admin"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/IGW"
+   }
+  },
+  "vpcatallaadminVPCGW3324FAEC": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    },
+    "InternetGatewayId": {
+     "Ref": "vpcatallaadminIGWB761A07F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/vpc-atalla-admin/VPCGW"
+   }
+  },
+  "adminacl57A9013A": {
+   "Type": "AWS::EC2::NetworkAcl",
+   "Properties": {
+    "VpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/Resource"
+   }
+  },
+  "adminaclDefaultAssociationProjectAtallaStackvpcatallaadminpublicsubnetSubnet2DB36C703CDDE9938": {
+   "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "SubnetId": {
+     "Ref": "vpcatallaadminpublicsubnetSubnet2Subnet1D7DDB73"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/DefaultAssociationProjectAtallaStackvpcatallaadminpublicsubnetSubnet2DB36C703/Resource"
+   }
+  },
+  "adminaclrulehttpingressofficeB4825181": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 10,
+    "CidrBlock": "217.103.3.94/32",
+    "Egress": false,
+    "PortRange": {
+     "From": 80,
+     "To": 80
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-http-ingress-office/Resource"
+   }
+  },
+  "adminaclrulehttpsingressoffice81095FE1": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 20,
+    "CidrBlock": "217.103.3.94/32",
+    "Egress": false,
+    "PortRange": {
+     "From": 443,
+     "To": 443
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-https-ingress-office/Resource"
+   }
+  },
+  "adminaclrulesshingressoffice3DD635EA": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 30,
+    "CidrBlock": "217.103.3.94/32",
+    "Egress": false,
+    "PortRange": {
+     "From": 22,
+     "To": 22
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-ssh-ingress-office/Resource"
+   }
+  },
+  "adminaclrulerdpingressofficeEE13660A": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 40,
+    "CidrBlock": "217.103.3.94/32",
+    "Egress": false,
+    "PortRange": {
+     "From": 3389,
+     "To": 3389
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-rdp-ingress-office/Resource"
+   }
+  },
+  "adminaclruleegressoffice5D84AB73": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 50,
+    "CidrBlock": "217.103.3.94/32",
+    "Egress": true,
+    "PortRange": {
+     "From": 1024,
+     "To": 65535
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-egress-office/Resource"
+   }
+  },
+  "adminaclrulehttpingressweb998C5BFE": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 60,
+    "CidrBlock": "10.10.10.0/25",
+    "Egress": false,
+    "PortRange": {
+     "From": 80,
+     "To": 80
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-http-ingress-web/Resource"
+   }
+  },
+  "adminaclrulehttpsingressweb0735A151": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 70,
+    "CidrBlock": "10.10.10.0/25",
+    "Egress": false,
+    "PortRange": {
+     "From": 443,
+     "To": 443
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-https-ingress-web/Resource"
+   }
+  },
+  "adminaclrulesshingresswebBF400DF1": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 80,
+    "CidrBlock": "10.10.10.0/25",
+    "Egress": false,
+    "PortRange": {
+     "From": 22,
+     "To": 22
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-ssh-ingress-web/Resource"
+   }
+  },
+  "adminaclrulerdpingresswebE5E1ADC7": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 90,
+    "CidrBlock": "10.10.10.0/25",
+    "Egress": false,
+    "PortRange": {
+     "From": 3389,
+     "To": 3389
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-rdp-ingress-web/Resource"
+   }
+  },
+  "adminaclruleegresswebECB6A7C4": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "adminacl57A9013A"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 100,
+    "CidrBlock": "10.10.10.0/25",
+    "Egress": true,
+    "PortRange": {
+     "From": 1024,
+     "To": 65535
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/admin-acl/rule-egress-web/Resource"
+   }
+  },
+  "adminSG897E7E8B": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "ProjectAtallaStack/adminSG",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "217.103.3.94/32",
+      "Description": "from 217.103.3.94/32:1024-65535",
+      "FromPort": 1024,
+      "IpProtocol": "tcp",
+      "ToPort": 65535
+     },
+     {
+      "CidrIp": "10.10.10.0/25",
+      "Description": "from 10.10.10.0/25:1024-65535",
+      "FromPort": 1024,
+      "IpProtocol": "tcp",
+      "ToPort": 65535
+     }
+    ],
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "217.103.3.94/32",
+      "Description": "from 217.103.3.94/32:80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     },
+     {
+      "CidrIp": "217.103.3.94/32",
+      "Description": "from 217.103.3.94/32:443",
+      "FromPort": 443,
+      "IpProtocol": "tcp",
+      "ToPort": 443
+     },
+     {
+      "CidrIp": "217.103.3.94/32",
+      "Description": "from 217.103.3.94/32:22",
+      "FromPort": 22,
+      "IpProtocol": "tcp",
+      "ToPort": 22
+     },
+     {
+      "CidrIp": "217.103.3.94/32",
+      "Description": "from 217.103.3.94/32:3389",
+      "FromPort": 3389,
+      "IpProtocol": "tcp",
+      "ToPort": 3389
+     },
+     {
+      "CidrIp": "10.10.10.0/25",
+      "Description": "from 10.10.10.0/25:80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     },
+     {
+      "CidrIp": "10.10.10.0/25",
+      "Description": "from 10.10.10.0/25:443",
+      "FromPort": 443,
+      "IpProtocol": "tcp",
+      "ToPort": 443
+     },
+     {
+      "CidrIp": "10.10.10.0/25",
+      "Description": "from 10.10.10.0/25:22",
+      "FromPort": 22,
+      "IpProtocol": "tcp",
+      "ToPort": 22
+     },
+     {
+      "CidrIp": "10.10.10.0/25",
+      "Description": "from 10.10.10.0/25:3389",
+      "FromPort": 3389,
+      "IpProtocol": "tcp",
+      "ToPort": 3389
+     }
+    ],
+    "VpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/adminSG/Resource"
+   }
+  },
+  "atallapeering": {
+   "Type": "AWS::EC2::VPCPeeringConnection",
+   "Properties": {
+    "PeerVpcId": {
+     "Ref": "vpcatallaadmin09930B01"
+    },
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/atalla_peering"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/32PQW/CMAyFfwv3NGOgSbtW1YS4oKqduE6p8YZpcVDiqKrQ/vtSihbgwCnPX57esxf6bannM9P7DHZt1lGjz7UYaFVEXwgLfd6eQBXfvC0LVYamI6hDwygjS6qyQfDTNB0mnljuvQUyQpb/zaNYs6CLzpUR7M1wrblOucQ99kdkURuU3ro2h2603ExTUQIPRc++E/1gccN98IRqhOBIhpWz4XTJewRx2xLREf8UlhlhTP5VFXobHFxOvNXRs6PJUg6yt/yy1K9z/T47eKLMBRY6oq6m9w8xZpgPmgEAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
