@@ -2,7 +2,7 @@
 ## Welcome to Atalla-Techgrounds project V1.0
 
 This app deploys an AWS infrastructure consisting of:  
-A) 2 VPC's in region eu-central-1(Frankfurt), as the AZ's where the subnets would reside are AZ's of that region. To change the region you'll have to change the AZ's in the code accordingly. CIDR blocks used for the VPC's are 10.10.10.0/24 and 10.20.20.0/24.  
+A) 2 VPC's in region eu-central-1(Frankfurt), as the AZ's where the subnets would reside are AZ's of that region. To change the region you'll have to change the AZ's in the code accordingly. CIDR-blocks used for the VPC's are 10.10.10.0/24 and 10.20.20.0/24.  
 B) Each VPC spans two AZ's (eu-central-1a, eu-central-1b) with one public subnet in each AZ. The subnets have the CIDR Mask /25.  
 C) An EC2 instance that runs an Apache Web Server on Amazon Linux and resides in one of the VPC's in AZ eu-central-1a.  
 D) An EC2 instance that works as a management server and runs Windows Server 2022 and resides in the other VPC in AZ eu-central-1b. The server is used as a jump-host for the web server.  
