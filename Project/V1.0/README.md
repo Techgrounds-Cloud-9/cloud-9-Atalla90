@@ -1,7 +1,7 @@
 
 ## Welcome to Atalla-Techgrounds project V1.0
-
-This app deploys an AWS infrastructure consisting of:  
+-This is a Python IaC project using AWS CDK.  
+-This app deploys an AWS infrastructure consisting of:  
 A) 2 VPC's in region eu-central-1(Frankfurt), as the AZ's where the subnets would reside are AZ's of that region. To change the region you'll have to change the AZ's in the code accordingly. CIDR-blocks used for the VPC's are 10.10.10.0/24 and 10.20.20.0/24.  
 B) Each VPC spans two AZ's (eu-central-1a, eu-central-1b) with one public subnet in each AZ. The subnets have the CIDR Mask /25.  
 C) An EC2 instance that runs an Apache Web Server on Amazon Linux and resides in one of the VPC's in AZ eu-central-1a.  
@@ -18,24 +18,29 @@ M) Most of the IAM roles and policies that are required for the resources to fun
 
 ## To use the app
 
+1- First you should create your Python Virtual Environment for the app by running the command:
 ```
 python -m venv .venv
 ```
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+2- Then you activate your virtualenv. by running one of the following commands depending on the OS you're using.  
+For UNIX-based systems:
 
 ```
 source .venv/bin/activate
 ```
 
-If you are a Windows platform, you would activate the virtualenv like this:
+For Microsoft Windows:
 
 ```
 % .venv\Scripts\activate.bat
 ```
+Or:
+```
+% .venv\Scripts\activate.ps1
+```
 
-Once the virtualenv is activated, you can install the required dependencies.
+3- When the virtualenv. is activated you can install the requirements by running:
 
 ```
 pip install -r requirements.txt
