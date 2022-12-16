@@ -13,7 +13,7 @@ H) Each server is protected with a security group that allows only the needed in
 I) A Bash script contains the post-deployment script needed to download, install and configure Apache web server on the web server EC2 instance. The script is uploaded as an asset to the CDK assets S3 Buckets. The web server then reads the Bash script and executes it when the app is deployed. The assets Bucket is encrypted (AWS managed) and is not publicly accessible.  
 J) An AWS Backup Plan and Vault for daily backing up the webserver at 00:00. Each backup gets retained for 7 days.  
 K) KMS encryption keys that encrypt the EBS Volumes for both servers and the Backup Vault.  
-L) Only the IP addresses of home and office are allowed to make RDP connection with the management server, and only the management server is allowed to make an SSH connection with the webserver.  
+L) Only the IP addresses of home and office are allowed to make an RDP connection with the management server, and only the management server is allowed to make an SSH connection with the webserver.  
 M) Most of the IAM roles and policies that are required for the resources to function get generated automatically with exactly enough permissions for their functions.
 
 ## To use the app
