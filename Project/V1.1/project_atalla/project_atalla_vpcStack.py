@@ -355,7 +355,6 @@ class projectAtallaVpcStack(Stack):
             vpc = vpc_atalla_web,
             vpc_subnets = ec2.SubnetSelection(subnet_type = ec2.SubnetType.PUBLIC),
             internet_facing = True,
-            security_group = web_sg,
         )
 
         listener443 = apLb.add_listener("listener443", port = 443, certificates = [web_cert])

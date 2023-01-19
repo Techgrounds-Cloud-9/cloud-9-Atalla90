@@ -8,7 +8,6 @@ from project_atalla.project_atalla_certStack import projectAtallaCertStack
 
 app = cdk.App()
 
-
 enc_Stack = projectAtallaKmsStack(app, "ProjectAtallaKmsStack",
     )
 

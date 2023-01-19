@@ -195,7 +195,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.1.175"
+              "version": "10.1.224"
             }
           },
           "Exports": {
@@ -221,7 +221,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.1.175"
+              "version": "10.1.224"
             }
           },
           "BootstrapVersion": {
@@ -281,7 +281,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.1.175"
+              "version": "10.1.224"
             }
           },
           "BootstrapVersion": {
@@ -871,7 +871,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.1.175"
+              "version": "10.1.224"
             }
           },
           "Exports": {
@@ -897,7 +897,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.1.175"
+              "version": "10.1.224"
             }
           },
           "BootstrapVersion": {
@@ -4310,7 +4310,7 @@
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.1.175"
+              "version": "10.1.224"
             }
           },
           "BootstrapVersion": {
@@ -4340,7 +4340,7 @@
         "path": "Tree",
         "constructInfo": {
           "fqn": "constructs.Construct",
-          "version": "10.1.175"
+          "version": "10.1.224"
         }
       }
     },
