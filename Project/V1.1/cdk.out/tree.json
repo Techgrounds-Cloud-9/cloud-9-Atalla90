@@ -1,0 +1,4352 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "ProjectAtallaKmsStack": {
+        "id": "ProjectAtallaKmsStack",
+        "path": "ProjectAtallaKmsStack",
+        "children": {
+          "EBS_Admin_Key": {
+            "id": "EBS_Admin_Key",
+            "path": "ProjectAtallaKmsStack/EBS_Admin_Key",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaKmsStack/EBS_Admin_Key/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::KMS::Key",
+                  "aws:cdk:cloudformation:props": {
+                    "keyPolicy": {
+                      "Statement": [
+                        {
+                          "Action": "kms:*",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":root"
+                                ]
+                              ]
+                            }
+                          },
+                          "Resource": "*"
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "enableKeyRotation": true
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_kms.CfnKey",
+                  "version": "2.53.0"
+                }
+              },
+              "Alias": {
+                "id": "Alias",
+                "path": "ProjectAtallaKmsStack/EBS_Admin_Key/Alias",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaKmsStack/EBS_Admin_Key/Alias/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::KMS::Alias",
+                      "aws:cdk:cloudformation:props": {
+                        "aliasName": "alias/EBS_Admin_Key",
+                        "targetKeyId": {
+                          "Fn::GetAtt": [
+                            "EBSAdminKey7632249C",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_kms.CfnAlias",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_kms.Alias",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_kms.Key",
+              "version": "2.53.0"
+            }
+          },
+          "Vault_Key": {
+            "id": "Vault_Key",
+            "path": "ProjectAtallaKmsStack/Vault_Key",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaKmsStack/Vault_Key/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::KMS::Key",
+                  "aws:cdk:cloudformation:props": {
+                    "keyPolicy": {
+                      "Statement": [
+                        {
+                          "Action": "kms:*",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "AWS": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":root"
+                                ]
+                              ]
+                            }
+                          },
+                          "Resource": "*"
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "enableKeyRotation": true
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_kms.CfnKey",
+                  "version": "2.53.0"
+                }
+              },
+              "Alias": {
+                "id": "Alias",
+                "path": "ProjectAtallaKmsStack/Vault_Key/Alias",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaKmsStack/Vault_Key/Alias/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::KMS::Alias",
+                      "aws:cdk:cloudformation:props": {
+                        "aliasName": "alias/Vault_Key",
+                        "targetKeyId": {
+                          "Fn::GetAtt": [
+                            "VaultKey9052AFBA",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_kms.CfnAlias",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_kms.Alias",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_kms.Key",
+              "version": "2.53.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "ProjectAtallaKmsStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "ProjectAtallaKmsStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.53.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "ProjectAtallaKmsStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.175"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "ProjectAtallaKmsStack/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"VaultKey9052AFBA\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"VaultKey9052AFBA\",\"Arn\"]}",
+                "path": "ProjectAtallaKmsStack/Exports/Output{\"Fn::GetAtt\":[\"VaultKey9052AFBA\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.53.0"
+                }
+              },
+              "Output{\"Fn::GetAtt\":[\"EBSAdminKey7632249C\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"EBSAdminKey7632249C\",\"Arn\"]}",
+                "path": "ProjectAtallaKmsStack/Exports/Output{\"Fn::GetAtt\":[\"EBSAdminKey7632249C\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.175"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "ProjectAtallaKmsStack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.53.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "ProjectAtallaKmsStack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.53.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.53.0"
+        }
+      },
+      "ProjectAtallaCertStack": {
+        "id": "ProjectAtallaCertStack",
+        "path": "ProjectAtallaCertStack",
+        "children": {
+          "AtallaCert": {
+            "id": "AtallaCert",
+            "path": "ProjectAtallaCertStack/AtallaCert",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.53.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "ProjectAtallaCertStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "ProjectAtallaCertStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.53.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "ProjectAtallaCertStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.175"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "ProjectAtallaCertStack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.53.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "ProjectAtallaCertStack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.53.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.53.0"
+        }
+      },
+      "ProjectAtallaS3Stack": {
+        "id": "ProjectAtallaS3Stack",
+        "path": "ProjectAtallaS3Stack",
+        "children": {
+          "storage_bucket": {
+            "id": "storage_bucket",
+            "path": "ProjectAtallaS3Stack/storage_bucket",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaS3Stack/storage_bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "bucketEncryption": {
+                      "serverSideEncryptionConfiguration": [
+                        {
+                          "serverSideEncryptionByDefault": {
+                            "sseAlgorithm": "aws:kms",
+                            "kmsMasterKeyId": {
+                              "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "tags": [
+                      {
+                        "key": "aws-cdk:auto-delete-objects",
+                        "value": "true"
+                      },
+                      {
+                        "key": "aws-cdk:cr-owned:1eb926b1",
+                        "value": "true"
+                      }
+                    ],
+                    "versioningConfiguration": {
+                      "status": "Enabled"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.53.0"
+                }
+              },
+              "Policy": {
+                "id": "Policy",
+                "path": "ProjectAtallaS3Stack/storage_bucket/Policy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaS3Stack/storage_bucket/Policy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "bucket": {
+                          "Ref": "storagebucket04DF299D"
+                        },
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "s3:DeleteObject*",
+                                "s3:GetBucket*",
+                                "s3:List*"
+                              ],
+                              "Effect": "Allow",
+                              "Principal": {
+                                "AWS": {
+                                  "Fn::GetAtt": [
+                                    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                                    "Arn"
+                                  ]
+                                }
+                              },
+                              "Resource": [
+                                {
+                                  "Fn::GetAtt": [
+                                    "storagebucket04DF299D",
+                                    "Arn"
+                                  ]
+                                },
+                                {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Fn::GetAtt": [
+                                          "storagebucket04DF299D",
+                                          "Arn"
+                                        ]
+                                      },
+                                      "/*"
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                  "version": "2.53.0"
+                }
+              },
+              "AutoDeleteObjectsCustomResource": {
+                "id": "AutoDeleteObjectsCustomResource",
+                "path": "ProjectAtallaS3Stack/storage_bucket/AutoDeleteObjectsCustomResource",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "ProjectAtallaS3Stack/storage_bucket/AutoDeleteObjectsCustomResource/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CustomResource",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.53.0"
+            }
+          },
+          "Custom::S3AutoDeleteObjectsCustomResourceProvider": {
+            "id": "Custom::S3AutoDeleteObjectsCustomResourceProvider",
+            "path": "ProjectAtallaS3Stack/Custom::S3AutoDeleteObjectsCustomResourceProvider",
+            "children": {
+              "Staging": {
+                "id": "Staging",
+                "path": "ProjectAtallaS3Stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Staging",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.AssetStaging",
+                  "version": "2.53.0"
+                }
+              },
+              "Role": {
+                "id": "Role",
+                "path": "ProjectAtallaS3Stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.53.0"
+                }
+              },
+              "Handler": {
+                "id": "Handler",
+                "path": "ProjectAtallaS3Stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CustomResourceProvider",
+              "version": "2.53.0"
+            }
+          },
+          "ud_deploy": {
+            "id": "ud_deploy",
+            "path": "ProjectAtallaS3Stack/ud_deploy",
+            "children": {
+              "AwsCliLayer": {
+                "id": "AwsCliLayer",
+                "path": "ProjectAtallaS3Stack/ud_deploy/AwsCliLayer",
+                "children": {
+                  "Code": {
+                    "id": "Code",
+                    "path": "ProjectAtallaS3Stack/ud_deploy/AwsCliLayer/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "ProjectAtallaS3Stack/ud_deploy/AwsCliLayer/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.53.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "ProjectAtallaS3Stack/ud_deploy/AwsCliLayer/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.53.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaS3Stack/ud_deploy/AwsCliLayer/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                      "aws:cdk:cloudformation:props": {
+                        "content": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "5d8d1d0aacea23824c62f362e1e3c14b7dd14a31c71b53bfae4d14a6373c5510.zip"
+                        },
+                        "description": "/opt/awscli/aws"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.lambda_layer_awscli.AwsCliLayer",
+                  "version": "2.53.0"
+                }
+              },
+              "CustomResourceHandler": {
+                "id": "CustomResourceHandler",
+                "path": "ProjectAtallaS3Stack/ud_deploy/CustomResourceHandler",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.SingletonFunction",
+                  "version": "2.53.0"
+                }
+              },
+              "Asset1": {
+                "id": "Asset1",
+                "path": "ProjectAtallaS3Stack/ud_deploy/Asset1",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "ProjectAtallaS3Stack/ud_deploy/Asset1/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "ProjectAtallaS3Stack/ud_deploy/Asset1/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.53.0"
+                }
+              },
+              "CustomResource": {
+                "id": "CustomResource",
+                "path": "ProjectAtallaS3Stack/ud_deploy/CustomResource",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "ProjectAtallaS3Stack/ud_deploy/CustomResource/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CustomResource",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3_deployment.BucketDeployment",
+              "version": "2.53.0"
+            }
+          },
+          "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C": {
+            "id": "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+            "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole",
+                "children": {
+                  "ImportServiceRole": {
+                    "id": "ImportServiceRole",
+                    "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/ImportServiceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetBucket*",
+                                    "s3:GetObject*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:Abort*",
+                                    "s3:DeleteObject*",
+                                    "s3:GetBucket*",
+                                    "s3:GetObject*",
+                                    "s3:List*",
+                                    "s3:PutObject",
+                                    "s3:PutObjectLegalHold",
+                                    "s3:PutObjectRetention",
+                                    "s3:PutObjectTagging",
+                                    "s3:PutObjectVersionTagging"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "storagebucket04DF299D",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "storagebucket04DF299D",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "kms:Decrypt",
+                                    "kms:DescribeKey",
+                                    "kms:Encrypt",
+                                    "kms:GenerateDataKey*",
+                                    "kms:ReEncrypt*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+                            "roles": [
+                              {
+                                "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.53.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.53.0"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.53.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaS3Stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                      },
+                      "s3Key": "2bc265c5e0569aeb24a6349c15bd54e76e845892376515e036627ab0cc70bb64.zip"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+                        "Arn"
+                      ]
+                    },
+                    "handler": "index.handler",
+                    "layers": [
+                      {
+                        "Ref": "uddeployAwsCliLayer82060935"
+                      }
+                    ],
+                    "runtime": "python3.9",
+                    "timeout": 900
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.53.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "ProjectAtallaS3Stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "ProjectAtallaS3Stack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.53.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "ProjectAtallaS3Stack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.175"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "ProjectAtallaS3Stack/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"storagebucket04DF299D\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"storagebucket04DF299D\",\"Arn\"]}",
+                "path": "ProjectAtallaS3Stack/Exports/Output{\"Fn::GetAtt\":[\"storagebucket04DF299D\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.53.0"
+                }
+              },
+              "Output{\"Ref\":\"storagebucket04DF299D\"}": {
+                "id": "Output{\"Ref\":\"storagebucket04DF299D\"}",
+                "path": "ProjectAtallaS3Stack/Exports/Output{\"Ref\":\"storagebucket04DF299D\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.175"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "ProjectAtallaS3Stack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.53.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "ProjectAtallaS3Stack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.53.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.53.0"
+        }
+      },
+      "ProjectAtallaVpcStack": {
+        "id": "ProjectAtallaVpcStack",
+        "path": "ProjectAtallaVpcStack",
+        "children": {
+          "vpc-atalla-web": {
+            "id": "vpc-atalla-web",
+            "path": "ProjectAtallaVpcStack/vpc-atalla-web",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.10.10.0/24",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "vpc-atalla-web"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnVPC",
+                  "version": "2.53.0"
+                }
+              },
+              "private-subnetSubnet1": {
+                "id": "private-subnetSubnet1",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "availabilityZone": "eu-central-1a",
+                        "cidrBlock": "10.10.10.0/26",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "private-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet1RouteTable8AE51475"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet1SubnetFB418546"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet1RouteTable8AE51475"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1NATGatewayB7E28F0E"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "private-subnetSubnet2": {
+                "id": "private-subnetSubnet2",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "availabilityZone": "eu-central-1b",
+                        "cidrBlock": "10.10.10.64/26",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "private-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet2RouteTable6E78400C"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet2SubnetFC68112C"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet2RouteTable6E78400C"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1NATGatewayB7E28F0E"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "private-subnetSubnet3": {
+                "id": "private-subnetSubnet3",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "availabilityZone": "eu-central-1c",
+                        "cidrBlock": "10.10.10.128/26",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "private-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet3RouteTableA689674A"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet3SubnetFEFCCF9A"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/private-subnetSubnet3/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet3RouteTableA689674A"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1NATGatewayB7E28F0E"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "public-subnetSubnet1": {
+                "id": "public-subnetSubnet1",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "availabilityZone": "eu-central-1a",
+                        "cidrBlock": "10.10.10.192/28",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "public-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1RouteTable298557A0"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1RouteTable298557A0"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "vpcatallawebIGW935096D2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnEIP",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "subnetId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+                        },
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "vpcatallawebpublicsubnetSubnet1EIP1ACE3A34",
+                            "AllocationId"
+                          ]
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNatGateway",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "public-subnetSubnet2": {
+                "id": "public-subnetSubnet2",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "availabilityZone": "eu-central-1b",
+                        "cidrBlock": "10.10.10.208/28",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "public-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet2SubnetF3A7515D"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet2RouteTable7794F5BB"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "vpcatallawebIGW935096D2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "public-subnetSubnet3": {
+                "id": "public-subnetSubnet3",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "availabilityZone": "eu-central-1c",
+                        "cidrBlock": "10.10.10.224/28",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "public-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet3RouteTable09233D7A"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet3Subnet21EEFC0D"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-web/public-subnetSubnet3/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet3RouteTable09233D7A"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "vpcatallawebIGW935096D2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "vpc-atalla-web"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnInternetGateway",
+                  "version": "2.53.0"
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-web/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "vpcatallaweb4BEE7EE3"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "vpcatallawebIGW935096D2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnVPCGatewayAttachment",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.Vpc",
+              "version": "2.53.0"
+            }
+          },
+          "web-acl": {
+            "id": "web-acl",
+            "path": "ProjectAtallaVpcStack/web-acl",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/web-acl/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAcl",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "vpcatallaweb4BEE7EE3"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAcl",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet14A28B545": {
+                "id": "DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet14A28B545",
+                "path": "ProjectAtallaVpcStack/web-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet14A28B545",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet14A28B545/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet1SubnetFB418546"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetNetworkAclAssociation",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SubnetNetworkAclAssociation",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet2A895E4EA": {
+                "id": "DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet2A895E4EA",
+                "path": "ProjectAtallaVpcStack/web-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet2A895E4EA",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet2A895E4EA/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet2SubnetFC68112C"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetNetworkAclAssociation",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SubnetNetworkAclAssociation",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet3A35C1E5D": {
+                "id": "DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet3A35C1E5D",
+                "path": "ProjectAtallaVpcStack/web-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet3A35C1E5D",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebprivatesubnetSubnet3A35C1E5D/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebprivatesubnetSubnet3SubnetFEFCCF9A"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetNetworkAclAssociation",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SubnetNetworkAclAssociation",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ipv4-ingress": {
+                "id": "rule-http-ipv4-ingress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-http-ipv4-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-http-ipv4-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 100,
+                        "cidrBlock": "10.10.10.0/24",
+                        "egress": false,
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ssh-ingress": {
+                "id": "rule-ssh-ingress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-ssh-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-ssh-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 120,
+                        "cidrBlock": "10.20.20.0/24",
+                        "egress": false,
+                        "portRange": {
+                          "from": 22,
+                          "to": 22
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ingress-ipv4": {
+                "id": "rule-ephemeral-ingress-ipv4",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-ingress-ipv4",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-ingress-ipv4/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 130,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": false,
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ipv6-ingress": {
+                "id": "rule-ephemeral-ipv6-ingress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-ipv6-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-ipv6-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 160,
+                        "egress": false,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ipv4-egress": {
+                "id": "rule-http-ipv4-egress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-http-ipv4-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-http-ipv4-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 100,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-https-ipv4-egress": {
+                "id": "rule-https-ipv4-egress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-https-ipv4-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-https-ipv4-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 110,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 443,
+                          "to": 443
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-egress-ipv4": {
+                "id": "rule-ephemeral-egress-ipv4",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-egress-ipv4",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-egress-ipv4/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 120,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ipv6-egress": {
+                "id": "rule-http-ipv6-egress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-http-ipv6-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-http-ipv6-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 130,
+                        "egress": true,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-https-ipv6-egress": {
+                "id": "rule-https-ipv6-egress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-https-ipv6-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-https-ipv6-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 140,
+                        "egress": true,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 443,
+                          "to": 443
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ipv6-egress": {
+                "id": "rule-ephemeral-ipv6-egress",
+                "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-ipv6-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/web-acl/rule-ephemeral-ipv6-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "webaclA21B3BBA"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 150,
+                        "egress": true,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.NetworkAcl",
+              "version": "2.53.0"
+            }
+          },
+          "alb-acl": {
+            "id": "alb-acl",
+            "path": "ProjectAtallaVpcStack/alb-acl",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/alb-acl/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAcl",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "vpcatallaweb4BEE7EE3"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAcl",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet145A15B80": {
+                "id": "DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet145A15B80",
+                "path": "ProjectAtallaVpcStack/alb-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet145A15B80",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet145A15B80/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetNetworkAclAssociation",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SubnetNetworkAclAssociation",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet229215BA7": {
+                "id": "DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet229215BA7",
+                "path": "ProjectAtallaVpcStack/alb-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet229215BA7",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet229215BA7/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet2SubnetF3A7515D"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetNetworkAclAssociation",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SubnetNetworkAclAssociation",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet322BC1E66": {
+                "id": "DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet322BC1E66",
+                "path": "ProjectAtallaVpcStack/alb-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet322BC1E66",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/DefaultAssociationProjectAtallaVpcStackvpcatallawebpublicsubnetSubnet322BC1E66/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallawebpublicsubnetSubnet3Subnet21EEFC0D"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetNetworkAclAssociation",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SubnetNetworkAclAssociation",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ipv4-ingress": {
+                "id": "rule-http-ipv4-ingress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-http-ipv4-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-http-ipv4-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 100,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": false,
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-https-ipv4-ingress": {
+                "id": "rule-https-ipv4-ingress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-https-ipv4-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-https-ipv4-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 110,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": false,
+                        "portRange": {
+                          "from": 443,
+                          "to": 443
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ingress-ipv4": {
+                "id": "rule-ephemeral-ingress-ipv4",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-ingress-ipv4",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-ingress-ipv4/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 120,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": false,
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ipv6-ingress": {
+                "id": "rule-http-ipv6-ingress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-http-ipv6-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-http-ipv6-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 130,
+                        "egress": false,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-https-ipv6-ingress": {
+                "id": "rule-https-ipv6-ingress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-https-ipv6-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-https-ipv6-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 140,
+                        "egress": false,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 443,
+                          "to": 443
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ipv6-ingress": {
+                "id": "rule-ephemeral-ipv6-ingress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-ipv6-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-ipv6-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 150,
+                        "egress": false,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ipv4-egress": {
+                "id": "rule-http-ipv4-egress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-http-ipv4-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-http-ipv4-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 100,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-https-ipv4-egress": {
+                "id": "rule-https-ipv4-egress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-https-ipv4-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-https-ipv4-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 110,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 443,
+                          "to": 443
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-egress-ipv4": {
+                "id": "rule-ephemeral-egress-ipv4",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-egress-ipv4",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-egress-ipv4/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 120,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ipv6-egress": {
+                "id": "rule-ephemeral-ipv6-egress",
+                "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-ipv6-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/alb-acl/rule-ephemeral-ipv6-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "albacl45BC8302"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 150,
+                        "egress": true,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.NetworkAcl",
+              "version": "2.53.0"
+            }
+          },
+          "webSG": {
+            "id": "webSG",
+            "path": "ProjectAtallaVpcStack/webSG",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/webSG/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "ProjectAtallaVpcStack/webSG",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "10.10.10.0/24",
+                        "ipProtocol": "tcp",
+                        "fromPort": 80,
+                        "toPort": 80,
+                        "description": "from 10.10.10.0/24:80"
+                      },
+                      {
+                        "cidrIp": "10.20.20.0/24",
+                        "ipProtocol": "tcp",
+                        "fromPort": 22,
+                        "toPort": 22,
+                        "description": "from 10.20.20.0/24:22"
+                      },
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 443,
+                        "toPort": 443,
+                        "description": "Allow from anyone on port 443"
+                      },
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 80,
+                        "toPort": 80,
+                        "description": "Allow from anyone on port 80"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "vpcatallaweb4BEE7EE3"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                  "version": "2.53.0"
+                }
+              },
+              "from ProjectAtallaVpcStackwebSG8B013C9F:80": {
+                "id": "from ProjectAtallaVpcStackwebSG8B013C9F:80",
+                "path": "ProjectAtallaVpcStack/webSG/from ProjectAtallaVpcStackwebSG8B013C9F:80",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "ipProtocol": "tcp",
+                    "description": "Load balancer to target",
+                    "fromPort": 80,
+                    "groupId": {
+                      "Fn::GetAtt": [
+                        "webSG9F367DE6",
+                        "GroupId"
+                      ]
+                    },
+                    "sourceSecurityGroupId": {
+                      "Fn::GetAtt": [
+                        "webSG9F367DE6",
+                        "GroupId"
+                      ]
+                    },
+                    "toPort": 80
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupIngress",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+              "version": "2.53.0"
+            }
+          },
+          "vpc-atalla-admin": {
+            "id": "vpc-atalla-admin",
+            "path": "ProjectAtallaVpcStack/vpc-atalla-admin",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-admin/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.20.20.0/24",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "vpc-atalla-admin"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnVPC",
+                  "version": "2.53.0"
+                }
+              },
+              "public-subnetSubnet1": {
+                "id": "public-subnetSubnet1",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaadmin09930B01"
+                        },
+                        "availabilityZone": "eu-central-1a",
+                        "cidrBlock": "10.20.20.0/25",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "public-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaadmin09930B01"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallaadminpublicsubnetSubnet1RouteTable62F1F1C8"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallaadminpublicsubnetSubnet1Subnet8FCCAAC4"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallaadminpublicsubnetSubnet1RouteTable62F1F1C8"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "vpcatallaadminIGWB761A07F"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "public-subnetSubnet2": {
+                "id": "public-subnetSubnet2",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaadmin09930B01"
+                        },
+                        "availabilityZone": "eu-central-1b",
+                        "cidrBlock": "10.20.20.128/25",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "public-subnet"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "vpcatallaadmin09930B01"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallaadminpublicsubnetSubnet2RouteTableA1872FC3"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallaadminpublicsubnetSubnet2Subnet1D7DDB73"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "ProjectAtallaVpcStack/vpc-atalla-admin/public-subnetSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "vpcatallaadminpublicsubnetSubnet2RouteTableA1872FC3"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "vpcatallaadminIGWB761A07F"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
+                  "version": "2.53.0"
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-admin/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "vpc-atalla-admin"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnInternetGateway",
+                  "version": "2.53.0"
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "ProjectAtallaVpcStack/vpc-atalla-admin/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "vpcatallaadmin09930B01"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "vpcatallaadminIGWB761A07F"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnVPCGatewayAttachment",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.Vpc",
+              "version": "2.53.0"
+            }
+          },
+          "admin-acl": {
+            "id": "admin-acl",
+            "path": "ProjectAtallaVpcStack/admin-acl",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/admin-acl/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAcl",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "vpcatallaadmin09930B01"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAcl",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultAssociationProjectAtallaVpcStackvpcatallaadminpublicsubnetSubnet200F244F2": {
+                "id": "DefaultAssociationProjectAtallaVpcStackvpcatallaadminpublicsubnetSubnet200F244F2",
+                "path": "ProjectAtallaVpcStack/admin-acl/DefaultAssociationProjectAtallaVpcStackvpcatallaadminpublicsubnetSubnet200F244F2",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/DefaultAssociationProjectAtallaVpcStackvpcatallaadminpublicsubnetSubnet200F244F2/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "subnetId": {
+                          "Ref": "vpcatallaadminpublicsubnetSubnet2Subnet1D7DDB73"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetNetworkAclAssociation",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SubnetNetworkAclAssociation",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ssh-ingress-home": {
+                "id": "rule-ssh-ingress-home",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-ssh-ingress-home",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-ssh-ingress-home/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 100,
+                        "cidrBlock": "217.103.21.122/32",
+                        "egress": false,
+                        "portRange": {
+                          "from": 22,
+                          "to": 22
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-rdp-ingress-home": {
+                "id": "rule-rdp-ingress-home",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-rdp-ingress-home",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-rdp-ingress-home/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 110,
+                        "cidrBlock": "217.103.21.122/32",
+                        "egress": false,
+                        "portRange": {
+                          "from": 3389,
+                          "to": 3389
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ingress-web": {
+                "id": "rule-ephemeral-ingress-web",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-ingress-web",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-ingress-web/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 120,
+                        "cidrBlock": "10.10.10.0/24",
+                        "egress": false,
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ipv6-ingress": {
+                "id": "rule-ephemeral-ipv6-ingress",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-ipv6-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-ipv6-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 130,
+                        "egress": false,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-ingress": {
+                "id": "rule-ephemeral-ingress",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-ingress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-ingress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 140,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": false,
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ssh-egress-web": {
+                "id": "rule-ssh-egress-web",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-ssh-egress-web",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-ssh-egress-web/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 100,
+                        "cidrBlock": "10.10.10.0/24",
+                        "egress": true,
+                        "portRange": {
+                          "from": 22,
+                          "to": 22
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ipv6-egress": {
+                "id": "rule-http-ipv6-egress",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-http-ipv6-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-http-ipv6-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 110,
+                        "egress": true,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-https-ipv6-egress": {
+                "id": "rule-https-ipv6-egress",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-https-ipv6-egress",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-https-ipv6-egress/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 120,
+                        "egress": true,
+                        "ipv6CidrBlock": "::/0",
+                        "portRange": {
+                          "from": 443,
+                          "to": 443
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-ephemeral-egress-home": {
+                "id": "rule-ephemeral-egress-home",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-egress-home",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-ephemeral-egress-home/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 130,
+                        "cidrBlock": "217.103.21.122/32",
+                        "egress": true,
+                        "portRange": {
+                          "from": 1024,
+                          "to": 65535
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-http-ingress-home": {
+                "id": "rule-http-ingress-home",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-http-ingress-home",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-http-ingress-home/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 140,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 80,
+                          "to": 80
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              },
+              "rule-https-ingress-home": {
+                "id": "rule-https-ingress-home",
+                "path": "ProjectAtallaVpcStack/admin-acl/rule-https-ingress-home",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin-acl/rule-https-ingress-home/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NetworkAclEntry",
+                      "aws:cdk:cloudformation:props": {
+                        "networkAclId": {
+                          "Ref": "adminacl57A9013A"
+                        },
+                        "protocol": 6,
+                        "ruleAction": "allow",
+                        "ruleNumber": 150,
+                        "cidrBlock": "0.0.0.0/0",
+                        "egress": true,
+                        "portRange": {
+                          "from": 443,
+                          "to": 443
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnNetworkAclEntry",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.NetworkAclEntry",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.NetworkAcl",
+              "version": "2.53.0"
+            }
+          },
+          "adminSG": {
+            "id": "adminSG",
+            "path": "ProjectAtallaVpcStack/adminSG",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/adminSG/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "ProjectAtallaVpcStack/adminSG",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "217.103.21.122/32",
+                        "ipProtocol": "tcp",
+                        "fromPort": 22,
+                        "toPort": 22,
+                        "description": "from 217.103.21.122/32:22"
+                      },
+                      {
+                        "cidrIp": "217.103.21.122/32",
+                        "ipProtocol": "tcp",
+                        "fromPort": 3389,
+                        "toPort": 3389,
+                        "description": "from 217.103.21.122/32:3389"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "vpcatallaadmin09930B01"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+              "version": "2.53.0"
+            }
+          },
+          "atalla_peering": {
+            "id": "atalla_peering",
+            "path": "ProjectAtallaVpcStack/atalla_peering",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::VPCPeeringConnection",
+              "aws:cdk:cloudformation:props": {
+                "peerVpcId": {
+                  "Ref": "vpcatallaadmin09930B01"
+                },
+                "vpcId": {
+                  "Ref": "vpcatallaweb4BEE7EE3"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.CfnVPCPeeringConnection",
+              "version": "2.53.0"
+            }
+          },
+          "admin_to_web_route1": {
+            "id": "admin_to_web_route1",
+            "path": "ProjectAtallaVpcStack/admin_to_web_route1",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "vpcatallaadminpublicsubnetSubnet1RouteTable62F1F1C8"
+                },
+                "destinationCidrBlock": "10.10.10.0/24",
+                "vpcPeeringConnectionId": {
+                  "Fn::GetAtt": [
+                    "atallapeering",
+                    "Id"
+                  ]
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+              "version": "2.53.0"
+            }
+          },
+          "admin_to_web_route2": {
+            "id": "admin_to_web_route2",
+            "path": "ProjectAtallaVpcStack/admin_to_web_route2",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "vpcatallaadminpublicsubnetSubnet2RouteTableA1872FC3"
+                },
+                "destinationCidrBlock": "10.10.10.0/24",
+                "vpcPeeringConnectionId": {
+                  "Fn::GetAtt": [
+                    "atallapeering",
+                    "Id"
+                  ]
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+              "version": "2.53.0"
+            }
+          },
+          "web_to_admin_route1": {
+            "id": "web_to_admin_route1",
+            "path": "ProjectAtallaVpcStack/web_to_admin_route1",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "vpcatallawebprivatesubnetSubnet1RouteTable8AE51475"
+                },
+                "destinationCidrBlock": "10.20.20.0/24",
+                "vpcPeeringConnectionId": {
+                  "Fn::GetAtt": [
+                    "atallapeering",
+                    "Id"
+                  ]
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+              "version": "2.53.0"
+            }
+          },
+          "web_to_admin_route2": {
+            "id": "web_to_admin_route2",
+            "path": "ProjectAtallaVpcStack/web_to_admin_route2",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "vpcatallawebprivatesubnetSubnet2RouteTable6E78400C"
+                },
+                "destinationCidrBlock": "10.20.20.0/24",
+                "vpcPeeringConnectionId": {
+                  "Fn::GetAtt": [
+                    "atallapeering",
+                    "Id"
+                  ]
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+              "version": "2.53.0"
+            }
+          },
+          "web_to_admin_route3": {
+            "id": "web_to_admin_route3",
+            "path": "ProjectAtallaVpcStack/web_to_admin_route3",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "vpcatallawebprivatesubnetSubnet3RouteTableA689674A"
+                },
+                "destinationCidrBlock": "10.20.20.0/24",
+                "vpcPeeringConnectionId": {
+                  "Fn::GetAtt": [
+                    "atallapeering",
+                    "Id"
+                  ]
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+              "version": "2.53.0"
+            }
+          },
+          "ws_KeyPair": {
+            "id": "ws_KeyPair",
+            "path": "ProjectAtallaVpcStack/ws_KeyPair",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::KeyPair",
+              "aws:cdk:cloudformation:props": {
+                "keyName": "Atalla_ssh_KeyPair2390"
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.CfnKeyPair",
+              "version": "2.53.0"
+            }
+          },
+          "admin_server": {
+            "id": "admin_server",
+            "path": "ProjectAtallaVpcStack/admin_server",
+            "children": {
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "ProjectAtallaVpcStack/admin_server/InstanceRole",
+                "children": {
+                  "ImportInstanceRole": {
+                    "id": "ImportInstanceRole",
+                    "path": "ProjectAtallaVpcStack/admin_server/InstanceRole/ImportInstanceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/admin_server/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/admin_server"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.53.0"
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "ProjectAtallaVpcStack/admin_server/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "adminserverInstanceRole293D3FAF"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnInstanceProfile",
+                  "version": "2.53.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/admin_server/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": "eu-central-1b",
+                    "blockDeviceMappings": [
+                      {
+                        "deviceName": "/dev/sda1",
+                        "ebs": {
+                          "deleteOnTermination": true,
+                          "encrypted": true,
+                          "volumeSize": 30,
+                          "kmsKeyId": {
+                            "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttEBSAdminKey7632249CArn4F0137C3"
+                          }
+                        }
+                      }
+                    ],
+                    "iamInstanceProfile": {
+                      "Ref": "adminserverInstanceProfile3C08ACB6"
+                    },
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiwindowslatestWindowsServer2022EnglishFullBaseC96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t3.micro",
+                    "keyName": "Atalla_ssh_KeyPair2390",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "adminSG897E7E8B",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "vpcatallaadminpublicsubnetSubnet2Subnet1D7DDB73"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "ProjectAtallaVpcStack/admin_server"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "<powershell><powershell>\nAdd-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0\nStart-Service ssh-agent\nStart-Service sshd</powershell>"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnInstance",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.Instance",
+              "version": "2.53.0"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-windows-latest--Windows_Server-2022-English-Full-Base:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-windows-latest--Windows_Server-2022-English-Full-Base:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "ProjectAtallaVpcStack/SsmParameterValue:--aws--service--ami-windows-latest--Windows_Server-2022-English-Full-Base:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.53.0"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-windows-latest--Windows_Server-2022-English-Full-Base:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-windows-latest--Windows_Server-2022-English-Full-Base:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "ProjectAtallaVpcStack/SsmParameterValue:--aws--service--ami-windows-latest--Windows_Server-2022-English-Full-Base:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.53.0"
+            }
+          },
+          "role": {
+            "id": "role",
+            "path": "ProjectAtallaVpcStack/role",
+            "children": {
+              "Importrole": {
+                "id": "Importrole",
+                "path": "ProjectAtallaVpcStack/role/Importrole",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.53.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/role/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "ec2.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.53.0"
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "ProjectAtallaVpcStack/role/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/role/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "s3:GetBucket*",
+                                "s3:GetObject*",
+                                "s3:List*"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": [
+                                {
+                                  "Fn::ImportValue": "ProjectAtallaS3Stack:ExportsOutputFnGetAttstoragebucket04DF299DArn1B3E0545"
+                                },
+                                {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Fn::ImportValue": "ProjectAtallaS3Stack:ExportsOutputFnGetAttstoragebucket04DF299DArn1B3E0545"
+                                      },
+                                      "/*"
+                                    ]
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Action": [
+                                "kms:Decrypt",
+                                "kms:DescribeKey"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "roleDefaultPolicy7C980EBA",
+                        "roles": [
+                          {
+                            "Ref": "roleC7B7E775"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Policy",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Role",
+              "version": "2.53.0"
+            }
+          },
+          "launchTemp": {
+            "id": "launchTemp",
+            "path": "ProjectAtallaVpcStack/launchTemp",
+            "children": {
+              "Profile": {
+                "id": "Profile",
+                "path": "ProjectAtallaVpcStack/launchTemp/Profile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "roleC7B7E775"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnInstanceProfile",
+                  "version": "2.53.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/launchTemp/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::LaunchTemplate",
+                  "aws:cdk:cloudformation:props": {
+                    "launchTemplateData": {
+                      "blockDeviceMappings": [
+                        {
+                          "deviceName": "/dev/xvda",
+                          "ebs": {
+                            "deleteOnTermination": true,
+                            "encrypted": true,
+                            "volumeSize": 8
+                          }
+                        }
+                      ],
+                      "iamInstanceProfile": {
+                        "arn": {
+                          "Fn::GetAtt": [
+                            "launchTempProfile9B047DE3",
+                            "Arn"
+                          ]
+                        }
+                      },
+                      "imageId": {
+                        "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                      },
+                      "instanceType": "t3.micro",
+                      "keyName": "Atalla_ssh_KeyPair2390",
+                      "securityGroupIds": [
+                        {
+                          "Fn::GetAtt": [
+                            "webSG9F367DE6",
+                            "GroupId"
+                          ]
+                        }
+                      ],
+                      "tagSpecifications": [
+                        {
+                          "resourceType": "instance",
+                          "tags": [
+                            {
+                              "key": "Name",
+                              "value": "ProjectAtallaVpcStack/launchTemp"
+                            }
+                          ]
+                        },
+                        {
+                          "resourceType": "volume",
+                          "tags": [
+                            {
+                              "key": "Name",
+                              "value": "ProjectAtallaVpcStack/launchTemp"
+                            }
+                          ]
+                        }
+                      ],
+                      "userData": {
+                        "Fn::Base64": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "#!/bin/bash\nmkdir -p $(dirname '/tmp/user_data.sh')\naws s3 cp 's3://",
+                              {
+                                "Fn::ImportValue": "ProjectAtallaS3Stack:ExportsOutputRefstoragebucket04DF299D53AAA7A7"
+                              },
+                              "/user_data.sh' '/tmp/user_data.sh'\nset -e\nchmod +x '/tmp/user_data.sh'\n'/tmp/user_data.sh'"
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "tagSpecifications": [
+                      {
+                        "resourceType": "launch-template",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "ProjectAtallaVpcStack/launchTemp"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnLaunchTemplate",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.LaunchTemplate",
+              "version": "2.53.0"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "ProjectAtallaVpcStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.53.0"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "ProjectAtallaVpcStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.53.0"
+            }
+          },
+          "asg": {
+            "id": "asg",
+            "path": "ProjectAtallaVpcStack/asg",
+            "children": {
+              "ASG": {
+                "id": "ASG",
+                "path": "ProjectAtallaVpcStack/asg/ASG",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "maxSize": "3",
+                    "minSize": "1",
+                    "healthCheckGracePeriod": 300,
+                    "healthCheckType": "ELB",
+                    "launchTemplate": {
+                      "launchTemplateId": {
+                        "Ref": "launchTemp86EB742A"
+                      },
+                      "version": {
+                        "Fn::GetAtt": [
+                          "launchTemp86EB742A",
+                          "LatestVersionNumber"
+                        ]
+                      }
+                    },
+                    "targetGroupArns": [
+                      {
+                        "Ref": "apLblistener443target80Group6761BB78"
+                      }
+                    ],
+                    "vpcZoneIdentifier": [
+                      {
+                        "Ref": "vpcatallawebprivatesubnetSubnet1SubnetFB418546"
+                      },
+                      {
+                        "Ref": "vpcatallawebprivatesubnetSubnet2SubnetFC68112C"
+                      },
+                      {
+                        "Ref": "vpcatallawebprivatesubnetSubnet3SubnetFEFCCF9A"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_autoscaling.AutoScalingGroup",
+              "version": "2.53.0"
+            }
+          },
+          "apLb": {
+            "id": "apLb",
+            "path": "ProjectAtallaVpcStack/apLb",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProjectAtallaVpcStack/apLb/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                  "aws:cdk:cloudformation:props": {
+                    "loadBalancerAttributes": [
+                      {
+                        "key": "deletion_protection.enabled",
+                        "value": "false"
+                      }
+                    ],
+                    "scheme": "internet-facing",
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "webSG9F367DE6",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnets": [
+                      {
+                        "Ref": "vpcatallawebpublicsubnetSubnet1Subnet9196B15F"
+                      },
+                      {
+                        "Ref": "vpcatallawebpublicsubnetSubnet2SubnetF3A7515D"
+                      },
+                      {
+                        "Ref": "vpcatallawebpublicsubnetSubnet3Subnet21EEFC0D"
+                      }
+                    ],
+                    "type": "application"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnLoadBalancer",
+                  "version": "2.53.0"
+                }
+              },
+              "listener443": {
+                "id": "listener443",
+                "path": "ProjectAtallaVpcStack/apLb/listener443",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/apLb/listener443/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "defaultActions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "apLblistener443target80Group6761BB78"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "apLb87C06AB8"
+                        },
+                        "certificates": [
+                          {
+                            "certificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/a774ffc5-1d77-4037-b53e-53221fd6ee95"
+                          }
+                        ],
+                        "port": 443,
+                        "protocol": "HTTPS"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListener",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "target80Group": {
+                    "id": "target80Group",
+                    "path": "ProjectAtallaVpcStack/apLb/listener443/target80Group",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "ProjectAtallaVpcStack/apLb/listener443/target80Group/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "healthCheckEnabled": true,
+                            "healthCheckIntervalSeconds": 5,
+                            "healthCheckPath": "/",
+                            "healthCheckPort": "80",
+                            "healthCheckProtocol": "HTTP",
+                            "healthCheckTimeoutSeconds": 2,
+                            "port": 80,
+                            "protocol": "HTTP",
+                            "targetGroupAttributes": [
+                              {
+                                "key": "stickiness.enabled",
+                                "value": "false"
+                              }
+                            ],
+                            "targetType": "instance",
+                            "vpcId": {
+                              "Ref": "vpcatallaweb4BEE7EE3"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnTargetGroup",
+                          "version": "2.53.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationTargetGroup",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationListener",
+                  "version": "2.53.0"
+                }
+              },
+              "Redirect80To443": {
+                "id": "Redirect80To443",
+                "path": "ProjectAtallaVpcStack/apLb/Redirect80To443",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/apLb/Redirect80To443/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "defaultActions": [
+                          {
+                            "type": "redirect",
+                            "redirectConfig": {
+                              "statusCode": "HTTP_301",
+                              "port": "443",
+                              "protocol": "HTTPS"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "apLb87C06AB8"
+                        },
+                        "port": 80,
+                        "protocol": "HTTP"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListener",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationListener",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationLoadBalancer",
+              "version": "2.53.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "ProjectAtallaVpcStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "ProjectAtallaVpcStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.53.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "ProjectAtallaVpcStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.53.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.175"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "ProjectAtallaVpcStack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.53.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "ProjectAtallaVpcStack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.53.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.53.0"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.1.175"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.53.0"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": "21.0.0",
+  "files": {
+    "6b1ae4c396fd956e43f8d296ec56d3d5a251004492527b4eaad3ae43c8fef59b": {
+      "source": {
+        "path": "ProjectAtallaKmsStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "6b1ae4c396fd956e43f8d296ec56d3d5a251004492527b4eaad3ae43c8fef59b.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

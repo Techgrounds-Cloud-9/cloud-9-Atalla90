@@ -1,0 +1,19 @@
+{
+  "version": "21.0.0",
+  "files": {
+    "0417fcaa0fd9f3fb09499da31dd5c904035558ed02db28da35a650baebb45e18": {
+      "source": {
+        "path": "ProjectAtallaBackupStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "0417fcaa0fd9f3fb09499da31dd5c904035558ed02db28da35a650baebb45e18.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
