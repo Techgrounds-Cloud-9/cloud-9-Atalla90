@@ -1,0 +1,2160 @@
+{
+ "Resources": {
+  "WebserverVPC3C31823C": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.10.10.0/24",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Webserver VPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/Resource"
+   }
+  },
+  "WebserverVPCpublicSubnet1SubnetD1A72416": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    },
+    "AvailabilityZone": "eu-central-1a",
+    "CidrBlock": "10.10.10.0/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "Dominic/Webserver VPC/publicSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet1/Subnet"
+   }
+  },
+  "WebserverVPCpublicSubnet1RouteTableF46F14F4": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Webserver VPC/publicSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet1/RouteTable"
+   }
+  },
+  "WebserverVPCpublicSubnet1RouteTableAssociationA179C1E4": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "WebserverVPCpublicSubnet1RouteTableF46F14F4"
+    },
+    "SubnetId": {
+     "Ref": "WebserverVPCpublicSubnet1SubnetD1A72416"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet1/RouteTableAssociation"
+   }
+  },
+  "WebserverVPCpublicSubnet1DefaultRoute1AB34025": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "WebserverVPCpublicSubnet1RouteTableF46F14F4"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "WebserverVPCIGW70DF0826"
+    }
+   },
+   "DependsOn": [
+    "WebserverVPCVPCGW1A106FF8"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet1/DefaultRoute"
+   }
+  },
+  "WebserverVPCpublicSubnet2Subnet7144402F": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    },
+    "AvailabilityZone": "eu-central-1b",
+    "CidrBlock": "10.10.10.128/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "Dominic/Webserver VPC/publicSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet2/Subnet"
+   }
+  },
+  "WebserverVPCpublicSubnet2RouteTableB4D1C25A": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Webserver VPC/publicSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet2/RouteTable"
+   }
+  },
+  "WebserverVPCpublicSubnet2RouteTableAssociation7A6E4AB9": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "WebserverVPCpublicSubnet2RouteTableB4D1C25A"
+    },
+    "SubnetId": {
+     "Ref": "WebserverVPCpublicSubnet2Subnet7144402F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet2/RouteTableAssociation"
+   }
+  },
+  "WebserverVPCpublicSubnet2DefaultRoute7A54ACA8": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "WebserverVPCpublicSubnet2RouteTableB4D1C25A"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "WebserverVPCIGW70DF0826"
+    }
+   },
+   "DependsOn": [
+    "WebserverVPCVPCGW1A106FF8"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/publicSubnet2/DefaultRoute"
+   }
+  },
+  "WebserverVPCIGW70DF0826": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Webserver VPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/IGW"
+   }
+  },
+  "WebserverVPCVPCGW1A106FF8": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    },
+    "InternetGatewayId": {
+     "Ref": "WebserverVPCIGW70DF0826"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver VPC/VPCGW"
+   }
+  },
+  "AdminVPC20736A37": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.20.20.0/24",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin VPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/Resource"
+   }
+  },
+  "AdminVPCpublicSubnet1SubnetD4FB6981": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "AdminVPC20736A37"
+    },
+    "AvailabilityZone": "eu-central-1a",
+    "CidrBlock": "10.20.20.0/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin VPC/publicSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet1/Subnet"
+   }
+  },
+  "AdminVPCpublicSubnet1RouteTable90B192A7": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "AdminVPC20736A37"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin VPC/publicSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet1/RouteTable"
+   }
+  },
+  "AdminVPCpublicSubnet1RouteTableAssociation47BACE65": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AdminVPCpublicSubnet1RouteTable90B192A7"
+    },
+    "SubnetId": {
+     "Ref": "AdminVPCpublicSubnet1SubnetD4FB6981"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet1/RouteTableAssociation"
+   }
+  },
+  "AdminVPCpublicSubnet1DefaultRouteF236A747": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AdminVPCpublicSubnet1RouteTable90B192A7"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "AdminVPCIGWFE0ACF4F"
+    }
+   },
+   "DependsOn": [
+    "AdminVPCVPCGWC6968330"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet1/DefaultRoute"
+   }
+  },
+  "AdminVPCpublicSubnet2Subnet69C0699E": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "AdminVPC20736A37"
+    },
+    "AvailabilityZone": "eu-central-1b",
+    "CidrBlock": "10.20.20.128/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin VPC/publicSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet2/Subnet"
+   }
+  },
+  "AdminVPCpublicSubnet2RouteTable41D7C2B4": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "AdminVPC20736A37"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin VPC/publicSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet2/RouteTable"
+   }
+  },
+  "AdminVPCpublicSubnet2RouteTableAssociation879608D1": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AdminVPCpublicSubnet2RouteTable41D7C2B4"
+    },
+    "SubnetId": {
+     "Ref": "AdminVPCpublicSubnet2Subnet69C0699E"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet2/RouteTableAssociation"
+   }
+  },
+  "AdminVPCpublicSubnet2DefaultRoute7B1376DA": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "AdminVPCpublicSubnet2RouteTable41D7C2B4"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "AdminVPCIGWFE0ACF4F"
+    }
+   },
+   "DependsOn": [
+    "AdminVPCVPCGWC6968330"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/publicSubnet2/DefaultRoute"
+   }
+  },
+  "AdminVPCIGWFE0ACF4F": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin VPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/IGW"
+   }
+  },
+  "AdminVPCVPCGWC6968330": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "VpcId": {
+     "Ref": "AdminVPC20736A37"
+    },
+    "InternetGatewayId": {
+     "Ref": "AdminVPCIGWFE0ACF4F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin VPC/VPCGW"
+   }
+  },
+  "VPCpeeringconnection": {
+   "Type": "AWS::EC2::VPCPeeringConnection",
+   "Properties": {
+    "PeerVpcId": {
+     "Ref": "AdminVPC20736A37"
+    },
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    },
+    "PeerRegion": "eu-central-1"
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/VPC peering connection"
+   }
+  },
+  "VPCWebPeerRoute100": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "WebserverVPCpublicSubnet1RouteTableF46F14F4"
+    },
+    "DestinationCidrBlock": "10.20.20.0/24",
+    "VpcPeeringConnectionId": {
+     "Fn::GetAtt": [
+      "VPCpeeringconnection",
+      "Id"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/VPC-Web Peer Route100"
+   }
+  },
+  "VPCadminPeerRoute100": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "WebserverVPCpublicSubnet2RouteTableB4D1C25A"
+    },
+    "DestinationCidrBlock": "10.10.10.0/24",
+    "VpcPeeringConnectionId": {
+     "Fn::GetAtt": [
+      "VPCpeeringconnection",
+      "Id"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/VPC-admin Peer Route100"
+   }
+  },
+  "ApplicationLoadBalancer0E27B44D": {
+   "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+   "Properties": {
+    "LoadBalancerAttributes": [
+     {
+      "Key": "deletion_protection.enabled",
+      "Value": "false"
+     }
+    ],
+    "Scheme": "internet-facing",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "ApplicationLoadBalancerSecurityGroup6793854A",
+       "GroupId"
+      ]
+     }
+    ],
+    "Subnets": [
+     {
+      "Ref": "WebserverVPCpublicSubnet1SubnetD1A72416"
+     },
+     {
+      "Ref": "WebserverVPCpublicSubnet2Subnet7144402F"
+     }
+    ],
+    "Type": "application"
+   },
+   "DependsOn": [
+    "WebserverVPCpublicSubnet1DefaultRoute1AB34025",
+    "WebserverVPCpublicSubnet1RouteTableAssociationA179C1E4",
+    "WebserverVPCpublicSubnet2DefaultRoute7A54ACA8",
+    "WebserverVPCpublicSubnet2RouteTableAssociation7A6E4AB9"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Application Load Balancer/Resource"
+   }
+  },
+  "ApplicationLoadBalancerSecurityGroup6793854A": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatically created Security Group for ELB DominicApplicationLoadBalancer8C8E46F1",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "255.255.255.255/32",
+      "Description": "Disallow all traffic",
+      "FromPort": 252,
+      "IpProtocol": "icmp",
+      "ToPort": 86
+     }
+    ],
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     }
+    ],
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Application Load Balancer/SecurityGroup/Resource"
+   }
+  },
+  "ApplicationLoadBalancerRedirect80To44365A22391": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "DefaultActions": [
+     {
+      "RedirectConfig": {
+       "Port": "443",
+       "Protocol": "HTTPS",
+       "StatusCode": "HTTP_301"
+      },
+      "Type": "redirect"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "ApplicationLoadBalancer0E27B44D"
+    },
+    "Port": 80,
+    "Protocol": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Application Load Balancer/Redirect80To443/Resource"
+   }
+  },
+  "ApplicationLoadBalancerlistener80910AE562": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "DefaultActions": [
+     {
+      "TargetGroupArn": {
+       "Ref": "ApplicationLoadBalancerlistener80target80Group9C56C5AC"
+      },
+      "Type": "forward"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "ApplicationLoadBalancer0E27B44D"
+    },
+    "Port": 80,
+    "Protocol": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Application Load Balancer/listener80/Resource"
+   }
+  },
+  "ApplicationLoadBalancerlistener80target80Group9C56C5AC": {
+   "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+   "Properties": {
+    "Port": 80,
+    "Protocol": "HTTP",
+    "TargetGroupAttributes": [
+     {
+      "Key": "stickiness.enabled",
+      "Value": "false"
+     }
+    ],
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Application Load Balancer/listener80/target 80Group/Resource"
+   }
+  },
+  "WebserverACL1786A3D8": {
+   "Type": "AWS::EC2::NetworkAcl",
+   "Properties": {
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver-ACL/Resource"
+   }
+  },
+  "WebserverACLDefaultAssociationDominicWebserverVPCpublicSubnet1E38DBC37E466C8A2": {
+   "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "SubnetId": {
+     "Ref": "WebserverVPCpublicSubnet1SubnetD1A72416"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver-ACL/DefaultAssociationDominicWebserverVPCpublicSubnet1E38DBC37/Resource"
+   }
+  },
+  "WebserverACLDefaultAssociationDominicWebserverVPCpublicSubnet2DBF38705D94D6A57": {
+   "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "SubnetId": {
+     "Ref": "WebserverVPCpublicSubnet2Subnet7144402F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver-ACL/DefaultAssociationDominicWebserverVPCpublicSubnet2DBF38705/Resource"
+   }
+  },
+  "AllowAllEgressFD86B6D2": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "Protocol": -1,
+    "RuleAction": "allow",
+    "RuleNumber": 250,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": true
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow_All_Egress/Resource"
+   }
+  },
+  "AllowEphemeralIngress871CDB35": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 100,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": false,
+    "PortRange": {
+     "From": 1024,
+     "To": 65535
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow Ephemeral Ingress/Resource"
+   }
+  },
+  "AllowHTTPIngressDAC369F5": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 190,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": false,
+    "PortRange": {
+     "From": 80,
+     "To": 80
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow HTTP Ingress/Resource"
+   }
+  },
+  "AllowAdminSSHIngress13989685": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 120,
+    "CidrBlock": "10.20.20.128/25",
+    "Egress": false,
+    "PortRange": {
+     "From": 22,
+     "To": 22
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow Admin SSH Ingress/Resource"
+   }
+  },
+  "AllowHTTPSIngressEB19CE59": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 110,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": false,
+    "PortRange": {
+     "From": 443,
+     "To": 443
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow HTTPS Ingress/Resource"
+   }
+  },
+  "AllowAllIngressEphemeral8C280B73": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "WebserverACL1786A3D8"
+    },
+    "Protocol": -1,
+    "RuleAction": "allow",
+    "RuleNumber": 220,
+    "CidrBlock": "10.10.10.0/25",
+    "Egress": false
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow_All_Ingress_Ephemeral/Resource"
+   }
+  },
+  "AdminserverACL27C517F0": {
+   "Type": "AWS::EC2::NetworkAcl",
+   "Properties": {
+    "VpcId": {
+     "Ref": "AdminVPC20736A37"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin-server-ACL/Resource"
+   }
+  },
+  "AdminserverACLDefaultAssociationDominicAdminVPCpublicSubnet1888C8975116B8360": {
+   "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "SubnetId": {
+     "Ref": "AdminVPCpublicSubnet1SubnetD4FB6981"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin-server-ACL/DefaultAssociationDominicAdminVPCpublicSubnet1888C8975/Resource"
+   }
+  },
+  "AdminserverACLDefaultAssociationDominicAdminVPCpublicSubnet295E27212BFFDEAFE": {
+   "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "SubnetId": {
+     "Ref": "AdminVPCpublicSubnet2Subnet69C0699E"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin-server-ACL/DefaultAssociationDominicAdminVPCpublicSubnet295E27212/Resource"
+   }
+  },
+  "AllowSSHWebIncomingCF470B6D": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 120,
+    "CidrBlock": "10.10.10.0/24",
+    "Egress": false,
+    "PortRange": {
+     "From": 1024,
+     "To": 65535
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow SSH Web Incoming/Resource"
+   }
+  },
+  "AllowHTTPIncomingA92848F5": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 180,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": false,
+    "PortRange": {
+     "From": 1024,
+     "To": 65535
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow HTTP Incoming/Resource"
+   }
+  },
+  "AllowTrustedIPincoming8CB8E84B": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 100,
+    "CidrBlock": "83.81.114.11/32",
+    "Egress": false,
+    "PortRange": {
+     "From": 22,
+     "To": 22
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow Trusted IP incoming/Resource"
+   }
+  },
+  "AllowAdminRDPofficeIncomingDC873CCA": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 130,
+    "CidrBlock": "83.81.114.11/32",
+    "Egress": false,
+    "PortRange": {
+     "From": 3389,
+     "To": 3389
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow Admin RDP office Incoming/Resource"
+   }
+  },
+  "AllowWebserverRDPIncoming363A8CE5": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "Protocol": 6,
+    "RuleAction": "allow",
+    "RuleNumber": 170,
+    "CidrBlock": "10.10.10.0/24",
+    "Egress": false,
+    "PortRange": {
+     "From": 3389,
+     "To": 3389
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow Web server RDP Incoming/Resource"
+   }
+  },
+  "AllowallEgress1BCA30D6": {
+   "Type": "AWS::EC2::NetworkAclEntry",
+   "Properties": {
+    "NetworkAclId": {
+     "Ref": "AdminserverACL27C517F0"
+    },
+    "Protocol": -1,
+    "RuleAction": "allow",
+    "RuleNumber": 200,
+    "CidrBlock": "0.0.0.0/0",
+    "Egress": true
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Allow all Egress/Resource"
+   }
+  },
+  "alb8A8B13C2": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "webserver security group",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "10.20.20.0/24",
+      "Description": "Allow SSH access from the world",
+      "FromPort": 22,
+      "IpProtocol": "tcp",
+      "ToPort": 22
+     },
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "HTTP",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     },
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "HTTPS",
+      "FromPort": 443,
+      "IpProtocol": "tcp",
+      "ToPort": 443
+     },
+     {
+      "CidrIp": "10.20.20.128/25",
+      "Description": "Allow RDP access from the world",
+      "FromPort": 3389,
+      "IpProtocol": "tcp",
+      "ToPort": 3389
+     },
+     {
+      "Description": "Allow SSH access from the Admin SG",
+      "FromPort": 22,
+      "IpProtocol": "tcp",
+      "SourceSecurityGroupId": {
+       "Fn::GetAtt": [
+        "AdminSG5673A08E",
+        "GroupId"
+       ]
+      },
+      "ToPort": 22
+     }
+    ],
+    "VpcId": {
+     "Ref": "WebserverVPC3C31823C"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/alb/Resource"
+   }
+  },
+  "AdminSG5673A08E": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "AdminSecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "83.81.114.11/32",
+      "Description": "SSH",
+      "FromPort": 22,
+      "IpProtocol": "tcp",
+      "ToPort": 22
+     },
+     {
+      "CidrIp": "83.81.114.11/32",
+      "Description": "RDP",
+      "FromPort": 3389,
+      "IpProtocol": "tcp",
+      "ToPort": 3389
+     }
+    ],
+    "VpcId": {
+     "Ref": "AdminVPC20736A37"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin SG/Resource"
+   }
+  },
+  "webserverroleDB0308B6": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AmazonS3ReadOnlyAccess"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/webserver-role/Resource"
+   }
+  },
+  "WebserverInstanceProfile5CEA6CFC": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "webserverroleDB0308B6"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver/InstanceProfile"
+   }
+  },
+  "Webserver2D6E5D9A": {
+   "Type": "AWS::EC2::Instance",
+   "Properties": {
+    "AvailabilityZone": "eu-central-1a",
+    "BlockDeviceMappings": [
+     {
+      "DeviceName": "/dev/xvda",
+      "Ebs": {
+       "Encrypted": true,
+       "VolumeSize": 8
+      }
+     }
+    ],
+    "IamInstanceProfile": {
+     "Ref": "WebserverInstanceProfile5CEA6CFC"
+    },
+    "ImageId": {
+     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "InstanceType": "t2.micro",
+    "KeyName": "ec2-key-pair",
+    "SecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "alb8A8B13C2",
+       "GroupId"
+      ]
+     }
+    ],
+    "SubnetId": {
+     "Ref": "WebserverVPCpublicSubnet1SubnetD1A72416"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Webserver"
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": {
+      "Fn::Join": [
+       "",
+       [
+        "#!/bin/bash\nmkdir -p $(dirname '/tmp/userdata1.sh')\naws s3 cp 's3://",
+        {
+         "Ref": "DominicAD94B360"
+        },
+        "/userdata1.sh' '/tmp/userdata1.sh'\nset -e\nchmod +x '/tmp/userdata1.sh'\n'/tmp/userdata1.sh'"
+       ]
+      ]
+     }
+    }
+   },
+   "DependsOn": [
+    "webserverroleDB0308B6"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Webserver/Resource"
+   }
+  },
+  "AdminServerInstanceRole4C534351": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin Server"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin Server/InstanceRole/Resource"
+   }
+  },
+  "AdminServerInstanceProfile3E3E505C": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "AdminServerInstanceRole4C534351"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin Server/InstanceProfile"
+   }
+  },
+  "AdminServerFBA5D893": {
+   "Type": "AWS::EC2::Instance",
+   "Properties": {
+    "AvailabilityZone": "eu-central-1a",
+    "BlockDeviceMappings": [
+     {
+      "DeviceName": "/dev/xvda",
+      "Ebs": {
+       "Encrypted": true,
+       "VolumeSize": 8
+      }
+     }
+    ],
+    "IamInstanceProfile": {
+     "Ref": "AdminServerInstanceProfile3E3E505C"
+    },
+    "ImageId": {
+     "Ref": "SsmParameterValueawsserviceamiwindowslatestWindowsServer2022EnglishFullBaseC96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "InstanceType": "t2.micro",
+    "KeyName": "ec2-key-pair",
+    "SecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "AdminSG5673A08E",
+       "GroupId"
+      ]
+     }
+    ],
+    "SubnetId": {
+     "Ref": "AdminVPCpublicSubnet1SubnetD4FB6981"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "Dominic/Admin Server"
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "<powershell></powershell>"
+    }
+   },
+   "DependsOn": [
+    "AdminServerInstanceRole4C534351"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin Server/Resource"
+   }
+  },
+  "InstanceSSMCBFA3CF0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/InstanceSSM/Resource"
+   }
+  },
+  "DominicAD94B360": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     },
+     {
+      "Key": "aws-cdk:cr-owned:f1a41224",
+      "Value": "true"
+     }
+    ],
+    "VersioningConfiguration": {
+     "Status": "Enabled"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Dominic/Resource"
+   }
+  },
+  "DominicPolicyD547F8C0": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "DominicAD94B360"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "DominicAD94B360",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DominicAD94B360",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:DeleteObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "DominicAD94B360",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DominicAD94B360",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "DominicAD94B360",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Dominic/Policy/Resource"
+   }
+  },
+  "DominicAutoDeleteObjectsCustomResource114AC00D": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "DominicAD94B360"
+    }
+   },
+   "DependsOn": [
+    "DominicPolicyD547F8C0"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Dominic/AutoDeleteObjectsCustomResource/Default"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "3f51abb709b8e65167a45aeed02bab11540603d909005d7148230ba5ce6c74d7.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "__entrypoint__.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs14.x",
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Lambda function for auto-deleting objects in ",
+       {
+        "Ref": "DominicAD94B360"
+       },
+       " S3 bucket."
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.3f51abb709b8e65167a45aeed02bab11540603d909005d7148230ba5ce6c74d7",
+    "aws:asset:property": "Code"
+   }
+  },
+  "ScriptBucketDeploymentAwsCliLayerB7A8FB27": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "5d8d1d0aacea23824c62f362e1e3c14b7dd14a31c71b53bfae4d14a6373c5510.zip"
+    },
+    "Description": "/opt/awscli/aws"
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Script Bucket Deployment/AwsCliLayer/Resource",
+    "aws:asset:path": "asset.5d8d1d0aacea23824c62f362e1e3c14b7dd14a31c71b53bfae4d14a6373c5510.zip",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Content"
+   }
+  },
+  "ScriptBucketDeploymentCustomResource927326AA": {
+   "Type": "Custom::CDKBucketDeployment",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+      "Arn"
+     ]
+    },
+    "SourceBucketNames": [
+     {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     }
+    ],
+    "SourceObjectKeys": [
+     "b8d07b7bdb3793ecc4818053a3c7a6a16dbd2400e0ba19f6472217b3ae5cab06.zip"
+    ],
+    "DestinationBucketName": {
+     "Ref": "DominicAD94B360"
+    },
+    "Prune": true
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Script Bucket Deployment/CustomResource/Default"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           },
+           "/*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           }
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:Abort*",
+        "s3:DeleteObject*",
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*",
+        "s3:PutObject",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention",
+        "s3:PutObjectTagging",
+        "s3:PutObjectVersionTagging"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "DominicAD94B360",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DominicAD94B360",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+    "Roles": [
+     {
+      "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "2bc265c5e0569aeb24a6349c15bd54e76e845892376515e036627ab0cc70bb64.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+      "Arn"
+     ]
+    },
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "ScriptBucketDeploymentAwsCliLayerB7A8FB27"
+     }
+    ],
+    "Runtime": "python3.9",
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+    "aws:asset:path": "asset.2bc265c5e0569aeb24a6349c15bd54e76e845892376515e036627ab0cc70bb64",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "WebbackupvaultEA2F079E": {
+   "Type": "AWS::Backup::BackupVault",
+   "Properties": {
+    "BackupVaultName": "Web_backup_vault"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Web-backup-vault/Resource"
+   }
+  },
+  "BackupPlan560A352E": {
+   "Type": "AWS::Backup::BackupPlan",
+   "Properties": {
+    "BackupPlan": {
+     "BackupPlanName": "Backup_Plan",
+     "BackupPlanRule": [
+      {
+       "CompletionWindowMinutes": 120,
+       "EnableContinuousBackup": true,
+       "Lifecycle": {
+        "DeleteAfterDays": 7
+       },
+       "RuleName": "Backup_PlanRule0",
+       "ScheduleExpression": "cron(0 17 ? * * *)",
+       "StartWindowMinutes": 60,
+       "TargetBackupVault": {
+        "Fn::GetAtt": [
+         "WebbackupvaultEA2F079E",
+         "BackupVaultName"
+        ]
+       }
+      }
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Backup_Plan/Resource"
+   }
+  },
+  "BackupPlanSelectionRole1D2B258E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "backup.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSBackupServiceRolePolicyForBackup"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSBackupServiceRolePolicyForRestores"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Backup_Plan/Selection/Role/Resource"
+   }
+  },
+  "BackupPlanSelectionE918F1C6": {
+   "Type": "AWS::Backup::BackupSelection",
+   "Properties": {
+    "BackupPlanId": {
+     "Fn::GetAtt": [
+      "BackupPlan560A352E",
+      "BackupPlanId"
+     ]
+    },
+    "BackupSelection": {
+     "IamRoleArn": {
+      "Fn::GetAtt": [
+       "BackupPlanSelectionRole1D2B258E",
+       "Arn"
+      ]
+     },
+     "Resources": [
+      {
+       "Fn::Join": [
+        "",
+        [
+         "arn:",
+         {
+          "Ref": "AWS::Partition"
+         },
+         ":ec2:",
+         {
+          "Ref": "AWS::Region"
+         },
+         ":",
+         {
+          "Ref": "AWS::AccountId"
+         },
+         ":instance/",
+         {
+          "Ref": "Webserver2D6E5D9A"
+         }
+        ]
+       ]
+      }
+     ],
+     "SelectionName": "Selection"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Backup_Plan/Selection/Resource"
+   }
+  },
+  "Adminbackupvault1C108595": {
+   "Type": "AWS::Backup::BackupVault",
+   "Properties": {
+    "BackupVaultName": "Admin_backup_vault"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Admin-backup-vault/Resource"
+   }
+  },
+  "PlanAdmin960CCC98": {
+   "Type": "AWS::Backup::BackupPlan",
+   "Properties": {
+    "BackupPlan": {
+     "BackupPlanName": "Plan_Admin",
+     "BackupPlanRule": [
+      {
+       "CompletionWindowMinutes": 120,
+       "EnableContinuousBackup": true,
+       "Lifecycle": {
+        "DeleteAfterDays": 7
+       },
+       "RuleName": "Plan_AdminRule0",
+       "ScheduleExpression": "cron(0 17 ? * 1 *)",
+       "StartWindowMinutes": 60,
+       "TargetBackupVault": {
+        "Fn::GetAtt": [
+         "Adminbackupvault1C108595",
+         "BackupVaultName"
+        ]
+       }
+      }
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Plan_Admin/Resource"
+   }
+  },
+  "PlanAdminAdminbackupplanRole39ED616E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "backup.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSBackupServiceRolePolicyForBackup"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Plan_Admin/Admin_backupplan/Role/Resource"
+   }
+  },
+  "PlanAdminAdminbackupplan02D0D79B": {
+   "Type": "AWS::Backup::BackupSelection",
+   "Properties": {
+    "BackupPlanId": {
+     "Fn::GetAtt": [
+      "PlanAdmin960CCC98",
+      "BackupPlanId"
+     ]
+    },
+    "BackupSelection": {
+     "IamRoleArn": {
+      "Fn::GetAtt": [
+       "PlanAdminAdminbackupplanRole39ED616E",
+       "Arn"
+      ]
+     },
+     "Resources": [
+      {
+       "Fn::Join": [
+        "",
+        [
+         "arn:",
+         {
+          "Ref": "AWS::Partition"
+         },
+         ":ec2:",
+         {
+          "Ref": "AWS::Region"
+         },
+         ":",
+         {
+          "Ref": "AWS::AccountId"
+         },
+         ":instance/",
+         {
+          "Ref": "AdminServerFBA5D893"
+         }
+        ]
+       ]
+      }
+     ],
+     "SelectionName": "Admin_backupplan"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/Plan_Admin/Admin_backupplan/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31TwW7bMAz9lt4drWswYFcn24oCw2AkRa4BLbOpFlkyJKqBYfjfR1l2bPewEx/fo2k+0n4S37bi8QFufiOr60arUnRHAnnNmDp3KJ9Ed2pktn8zp2KfFaHUSh5DaZAiN6ODDYSvUGqc+ZnLvbdSASlr7sURvBhCx5XPQHiDdnzNmOXEg7zXaGjkC0SnzGVvjUE59DqiDE5R++xsaIYXr4g/SDfrrrnUUVtkab6Z+DTf/+SZ/WnItevGiXoxnsDI0WHCfYYaPCmpLVQlaObYygevN28a3unQ/Ddru0FDFx9e5cs65QnNWDPhhf4K7sJLnZaySPtMQS26g013muI0ZeHsm2KqsNxq8JZQn/mt6HZBXtO1R5TCXLzKU7IDj/Hpc1dho20bzymS9ONOZOA9khd5DH2moS4rEF10By26Ezo/XJs3ppGs+RVMuv8dcOmE+6zk7zc0PO8QTxB0GnqRJlzwamdlyBI8osZ7409U32cH9Da4dOACHNRI8RjBk62X2oxXEm/5Q1XxZNEv/24XNja6Puvo+Mx/n9RK5De/12pYQuzHX36lkseipXdrvmzF10fx/eGvV2rjgiFVozik+A+9xHKv2wMAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "Dominic/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Parameters": {
+  "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+   "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
+  },
+  "SsmParameterValueawsserviceamiwindowslatestWindowsServer2022EnglishFullBaseC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+   "Default": "/aws/service/ami-windows-latest/Windows_Server-2022-English-Full-Base"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
