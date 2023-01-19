@@ -2080,7 +2080,7 @@
     },
     "Certificates": [
      {
-      "CertificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/a774ffc5-1d77-4037-b53e-53221fd6ee95"
+      "CertificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/0feeebbb-abbc-4e1d-93c6-f916471b47a2"
      }
     ],
     "Port": 443,
