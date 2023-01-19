@@ -2675,20 +2675,6 @@
                         "fromPort": 22,
                         "toPort": 22,
                         "description": "from 10.20.20.0/24:22"
-                      },
-                      {
-                        "cidrIp": "0.0.0.0/0",
-                        "ipProtocol": "tcp",
-                        "fromPort": 443,
-                        "toPort": 443,
-                        "description": "Allow from anyone on port 443"
-                      },
-                      {
-                        "cidrIp": "0.0.0.0/0",
-                        "ipProtocol": "tcp",
-                        "fromPort": 80,
-                        "toPort": 80,
-                        "description": "Allow from anyone on port 80"
                       }
                     ],
                     "vpcId": {
@@ -2701,9 +2687,9 @@
                   "version": "2.53.0"
                 }
               },
-              "from ProjectAtallaVpcStackwebSG8B013C9F:80": {
-                "id": "from ProjectAtallaVpcStackwebSG8B013C9F:80",
-                "path": "ProjectAtallaVpcStack/webSG/from ProjectAtallaVpcStackwebSG8B013C9F:80",
+              "from ProjectAtallaVpcStackapLbSecurityGroupD76E6FED:80": {
+                "id": "from ProjectAtallaVpcStackapLbSecurityGroupD76E6FED:80",
+                "path": "ProjectAtallaVpcStack/webSG/from ProjectAtallaVpcStackapLbSecurityGroupD76E6FED:80",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
                   "aws:cdk:cloudformation:props": {
@@ -2718,7 +2704,7 @@
                     },
                     "sourceSecurityGroupId": {
                       "Fn::GetAtt": [
-                        "webSG9F367DE6",
+                        "apLbSecurityGroupC404307F",
                         "GroupId"
                       ]
                     },
@@ -4137,7 +4123,7 @@
                     "securityGroups": [
                       {
                         "Fn::GetAtt": [
-                          "webSG9F367DE6",
+                          "apLbSecurityGroupC404307F",
                           "GroupId"
                         ]
                       }
@@ -4158,6 +4144,78 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnLoadBalancer",
+                  "version": "2.53.0"
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "ProjectAtallaVpcStack/apLb/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/apLb/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Automatically created Security Group for ELB ProjectAtallaVpcStackapLb70CB7152",
+                        "securityGroupIngress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 443,
+                            "toPort": 443,
+                            "description": "Allow from anyone on port 443"
+                          },
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "description": "Allow from anyone on port 80"
+                          }
+                        ],
+                        "vpcId": {
+                          "Ref": "vpcatallaweb4BEE7EE3"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                      "version": "2.53.0"
+                    }
+                  },
+                  "to ProjectAtallaVpcStackwebSG8B013C9F:80": {
+                    "id": "to ProjectAtallaVpcStackwebSG8B013C9F:80",
+                    "path": "ProjectAtallaVpcStack/apLb/SecurityGroup/to ProjectAtallaVpcStackwebSG8B013C9F:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                      "aws:cdk:cloudformation:props": {
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "apLbSecurityGroupC404307F",
+                            "GroupId"
+                          ]
+                        },
+                        "ipProtocol": "tcp",
+                        "description": "Load balancer to target",
+                        "destinationSecurityGroupId": {
+                          "Fn::GetAtt": [
+                            "webSG9F367DE6",
+                            "GroupId"
+                          ]
+                        },
+                        "fromPort": 80,
+                        "toPort": 80
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupEgress",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
                   "version": "2.53.0"
                 }
               },
@@ -4184,7 +4242,7 @@
                         },
                         "certificates": [
                           {
-                            "certificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/0feeebbb-abbc-4e1d-93c6-f916471b47a2"
+                            "certificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/8e67a93a-3ae2-4bf9-8dcf-dd84ecd4efe9"
                           }
                         ],
                         "port": 443,

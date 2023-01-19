@@ -1,7 +1,7 @@
 {
   "version": "21.0.0",
   "files": {
-    "2ecbfebed5187c3d1b16e0fd285c5db9c80c330bd579f2eca4fc4088d27d599a": {
+    "74a559cbf3b5b9aa4def29f2225df24514d5e0f8668f646f5d8fbf168898d6a1": {
       "source": {
         "path": "ProjectAtallaVpcStack.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "2ecbfebed5187c3d1b16e0fd285c5db9c80c330bd579f2eca4fc4088d27d599a.json",
+          "objectKey": "74a559cbf3b5b9aa4def29f2225df24514d5e0f8668f646f5d8fbf168898d6a1.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

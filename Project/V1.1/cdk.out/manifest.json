@@ -303,7 +303,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2ecbfebed5187c3d1b16e0fd285c5db9c80c330bd579f2eca4fc4088d27d599a.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/74a559cbf3b5b9aa4def29f2225df24514d5e0f8668f646f5d8fbf168898d6a1.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -669,10 +669,10 @@
             "data": "webSG9F367DE6"
           }
         ],
-        "/ProjectAtallaVpcStack/webSG/from ProjectAtallaVpcStackwebSG8B013C9F:80": [
+        "/ProjectAtallaVpcStack/webSG/from ProjectAtallaVpcStackapLbSecurityGroupD76E6FED:80": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "webSGfromProjectAtallaVpcStackwebSG8B013C9F80CBC3EE44"
+            "data": "webSGfromProjectAtallaVpcStackapLbSecurityGroupD76E6FED80ABED7AED"
           }
         ],
         "/ProjectAtallaVpcStack/vpc-atalla-admin/Resource": [
@@ -931,6 +931,18 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "apLb87C06AB8"
+          }
+        ],
+        "/ProjectAtallaVpcStack/apLb/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apLbSecurityGroupC404307F"
+          }
+        ],
+        "/ProjectAtallaVpcStack/apLb/SecurityGroup/to ProjectAtallaVpcStackwebSG8B013C9F:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apLbSecurityGrouptoProjectAtallaVpcStackwebSG8B013C9F80660C3D0F"
           }
         ],
         "/ProjectAtallaVpcStack/apLb/listener443/Resource": [

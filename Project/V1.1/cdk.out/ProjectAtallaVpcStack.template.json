@@ -1072,20 +1072,6 @@
       "FromPort": 22,
       "IpProtocol": "tcp",
       "ToPort": 22
-     },
-     {
-      "CidrIp": "0.0.0.0/0",
-      "Description": "Allow from anyone on port 443",
-      "FromPort": 443,
-      "IpProtocol": "tcp",
-      "ToPort": 443
-     },
-     {
-      "CidrIp": "0.0.0.0/0",
-      "Description": "Allow from anyone on port 80",
-      "FromPort": 80,
-      "IpProtocol": "tcp",
-      "ToPort": 80
      }
     ],
     "VpcId": {
@@ -1096,7 +1082,7 @@
     "aws:cdk:path": "ProjectAtallaVpcStack/webSG/Resource"
    }
   },
-  "webSGfromProjectAtallaVpcStackwebSG8B013C9F80CBC3EE44": {
+  "webSGfromProjectAtallaVpcStackapLbSecurityGroupD76E6FED80ABED7AED": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "IpProtocol": "tcp",
@@ -1110,14 +1096,14 @@
     },
     "SourceSecurityGroupId": {
      "Fn::GetAtt": [
-      "webSG9F367DE6",
+      "apLbSecurityGroupC404307F",
       "GroupId"
      ]
     },
     "ToPort": 80
    },
    "Metadata": {
-    "aws:cdk:path": "ProjectAtallaVpcStack/webSG/from ProjectAtallaVpcStackwebSG8B013C9F:80"
+    "aws:cdk:path": "ProjectAtallaVpcStack/webSG/from ProjectAtallaVpcStackapLbSecurityGroupD76E6FED:80"
    }
   },
   "vpcatallaadmin09930B01": {
@@ -2034,7 +2020,7 @@
     "SecurityGroups": [
      {
       "Fn::GetAtt": [
-       "webSG9F367DE6",
+       "apLbSecurityGroupC404307F",
        "GroupId"
       ]
      }
@@ -2064,6 +2050,58 @@
     "aws:cdk:path": "ProjectAtallaVpcStack/apLb/Resource"
    }
   },
+  "apLbSecurityGroupC404307F": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatically created Security Group for ELB ProjectAtallaVpcStackapLb70CB7152",
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 443",
+      "FromPort": 443,
+      "IpProtocol": "tcp",
+      "ToPort": 443
+     },
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     }
+    ],
+    "VpcId": {
+     "Ref": "vpcatallaweb4BEE7EE3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaVpcStack/apLb/SecurityGroup/Resource"
+   }
+  },
+  "apLbSecurityGrouptoProjectAtallaVpcStackwebSG8B013C9F80660C3D0F": {
+   "Type": "AWS::EC2::SecurityGroupEgress",
+   "Properties": {
+    "GroupId": {
+     "Fn::GetAtt": [
+      "apLbSecurityGroupC404307F",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "Description": "Load balancer to target",
+    "DestinationSecurityGroupId": {
+     "Fn::GetAtt": [
+      "webSG9F367DE6",
+      "GroupId"
+     ]
+    },
+    "FromPort": 80,
+    "ToPort": 80
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaVpcStack/apLb/SecurityGroup/to ProjectAtallaVpcStackwebSG8B013C9F:80"
+   }
+  },
   "apLblistener4434959A23E": {
    "Type": "AWS::ElasticLoadBalancingV2::Listener",
    "Properties": {
@@ -2080,7 +2118,7 @@
     },
     "Certificates": [
      {
-      "CertificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/0feeebbb-abbc-4e1d-93c6-f916471b47a2"
+      "CertificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/8e67a93a-3ae2-4bf9-8dcf-dd84ecd4efe9"
      }
     ],
     "Port": 443,
@@ -2142,7 +2180,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31Sy07DMBD8Fu6ueQmJa6gQqkDIaiuuaOMuraljR/aaKory72zihgQOnLwzsxnPbnwj727l1QWc4kLvjgtrStluCPRRMPXeor6R7VutxfLDvamlUMF8AeEmlQ6pJ6dq7RPhFkqLEz9xRYxeGyDj3U+zUKm0Rk8WjyvVH69AT3zJCZoerRxh4IYZxUnOqCDOeqjQkXhFOvlwLLQdPCaU/SfiT5T/5Il9dBSa38aZ2qBOwVDzFHyqB79/iZXbB4zxPIVCDMbtl9451GOgZ2wUmCBWLhI4jXkJ5/oFktOHLVa15Q300m+mEwYq2a59/g3jOX6vgv8wTCnPix/myVUnIJGPGizHkW3BYJPBzxh/uU6ghUhGWw+7Eizbs/TF76Woa/YcNvjC2sOgYRjCzvG8z0RCd+4Z65m+hbDnJzBmmcGuE2uMPoW8KAUBKqTsNBd4xzvTW3VCNXTw7vJWXl/J+4vPaMwiJEemQrnO5zcfy+S6FgMAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31SXU/jMBD8Lby7hgMh8ZqrKlSBkNVWvKKNu7S+OnZkr6miKP+dTdyQwEk87c7MavbDvpX3d/LmCs5xofenhTWlbLcE+iSYemtR38r2tdZi+e5e1VKoYD6AcJtKh9STU7bxiXAHpcWJn7giRq8NkPHuq1ioVFqjJ4vVWvXhBeiRm5yh6dHaEQYumFE8yQUVxLMeK3QkXpDOPpwKbQePCWX/ifgxym/yxK4chea7caa2qFMw1DwGn+rB71di7Q4BY7xsoRCDcYeldw71ONATNgpMEGsXCZzGfIRL/gzJ6eMOq9ryBXrpf+Zbw9XQrxMGKtlufH6dMY62Kvh3w5Ty/B7DmjnrBCTyUYPlKWVbMNhm8LXdT64TaCGS0dbDvgTL9ix98Dcq6po9h8M+s/Z30DAMO8zxvM5EQnepGfOZvoNw4J8xzjKDXSc2GH0K+X4KAlRI2Wku8On3prfqhGro6N31nfxzIx+u/kVjFiE5MhXKTY6fyNMggC0DAAA="
    },
    "Metadata": {
     "aws:cdk:path": "ProjectAtallaVpcStack/CDKMetadata/Default"
