@@ -8,11 +8,11 @@ B) The VPC where the admin server resides spans two AZ's (eu-central-1a, eu-cent
 C) The VPC where the web server instances resides spans three AZ's (eu-central-1a, eu-central-1b, eu-central-1c) with one public subnet and one private subnet in each AZ. The public subnents have the CIDR Mask /28, and the private subnets have the CIDR Mask /26. The private subnets are connected to the internet through a NAT Gateway.  
 D) An EC2 autoscaling group that launches an Apache Web Server on Amazon Linux instances to the private subnets.  
 E) An EC2 instance that works as a management server and runs Windows Server 2022 and resides in the other VPC in AZ eu-central-1b. The server is initially used as a jump-host for the web server.  
-F) A key-pair that's used for SSH and RDP connections and that gets generated and stored in Systems Manager's Parameter Store.  
+F) A key-pair that's used for SSH and RDP connections and that gets generated. The public key gets associated with the servers and the private key gets stored in AWS Systems Manager's Parameter Store.  
 G) Each subnet where one of the servers resides is protected with a NACL that allows only the inbound and outbound traffic needed for the respective server to perform its function.  
 H) A VPC peering connects both VPC's with each other, with the CIDR-blocks of only the two subnets where the servers reside registered in each other's route tables.  
 I) Each server is protected with a security group that allows only the needed inbound traffic and all the outbound traffic.  
-J) An S3 bucket where a Bash script contains the post-deployment script needed to download, install and configure Apache web server on the web server EC2 instances. The buckets in versioned to provide a cost-efficient backup solution for the user data.
+J) An S3 bucket where a Bash script contains the post-deployment script needed to download, install and configure Apache web server on the web server EC2 instances. The bucket is versioned to provide a cost-efficient backup solution for the user data.  
 K) KMS encryption keys that encrypt the EBS Volumes for the admin server's EBS volume and the bucket. While the EBS volumes of the web server instances are encrypted with keys that are AWS managed.  
 L) An application load balancer that works as proxy in front of the web server instances and that has nodes in the public subnets of the web VPC.  
 M) A self-signed TLS certificate that is used by the load balancer to provide HTTPS connection.  
