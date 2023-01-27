@@ -324,6 +324,7 @@ class projectAtallaVpcStack(Stack):
             instance_type = ec2.InstanceType(instance_type_identifier = "t3.micro"),
             machine_image = ec2.AmazonLinuxImage(),
             security_group = web_sg,
+            detailed_monitoring = True,
             block_devices = [ec2.BlockDevice(
                 device_name = "/dev/xvda",
                 volume = ec2.BlockDeviceVolume.ebs(
@@ -338,6 +339,8 @@ class projectAtallaVpcStack(Stack):
             user_data = ec2.UserData.for_linux()
         )
 
+        ssm_policy = launchTemp.role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AmazonEC2RoleforSSM"))
+
         ud_policy = ud_bucket.grant_read(launchTemp.role)
         ud_path = launchTemp.user_data.add_s3_download_command(bucket = ud_bucket, bucket_key = "user_data.sh")
         ud_exe = launchTemp.user_data.add_execute_file_command(file_path = ud_path)
@@ -348,7 +351,12 @@ class projectAtallaVpcStack(Stack):
             launch_template = launchTemp,
             min_capacity = 1,
             max_capacity = 3,
-            health_check = autoscale.HealthCheck.elb(grace = Duration.minutes(5))
+            cooldown = Duration.minutes(5),
+            health_check = autoscale.HealthCheck.elb(grace = Duration.minutes(5)),
+        )
+
+        scale_policy = asg.scale_on_cpu_utilization(id = "scale_policy",
+            target_utilization_percent = 70,
         )
         
         apLb = elb.ApplicationLoadBalancer (self, "apLb",

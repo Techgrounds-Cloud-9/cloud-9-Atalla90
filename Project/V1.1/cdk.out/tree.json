@@ -90,13 +90,13 @@
               "version": "2.53.0"
             }
           },
-          "Vault_Key": {
-            "id": "Vault_Key",
-            "path": "ProjectAtallaKmsStack/Vault_Key",
+          "Bucket_Key": {
+            "id": "Bucket_Key",
+            "path": "ProjectAtallaKmsStack/Bucket_Key",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "ProjectAtallaKmsStack/Vault_Key/Resource",
+                "path": "ProjectAtallaKmsStack/Bucket_Key/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::KMS::Key",
                   "aws:cdk:cloudformation:props": {
@@ -138,18 +138,18 @@
               },
               "Alias": {
                 "id": "Alias",
-                "path": "ProjectAtallaKmsStack/Vault_Key/Alias",
+                "path": "ProjectAtallaKmsStack/Bucket_Key/Alias",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "ProjectAtallaKmsStack/Vault_Key/Alias/Resource",
+                    "path": "ProjectAtallaKmsStack/Bucket_Key/Alias/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::KMS::Alias",
                       "aws:cdk:cloudformation:props": {
-                        "aliasName": "alias/Vault_Key",
+                        "aliasName": "alias/Bucket_Key",
                         "targetKeyId": {
                           "Fn::GetAtt": [
-                            "VaultKey9052AFBA",
+                            "BucketKey2EA18C7E",
                             "Arn"
                           ]
                         }
@@ -202,9 +202,9 @@
             "id": "Exports",
             "path": "ProjectAtallaKmsStack/Exports",
             "children": {
-              "Output{\"Fn::GetAtt\":[\"VaultKey9052AFBA\",\"Arn\"]}": {
-                "id": "Output{\"Fn::GetAtt\":[\"VaultKey9052AFBA\",\"Arn\"]}",
-                "path": "ProjectAtallaKmsStack/Exports/Output{\"Fn::GetAtt\":[\"VaultKey9052AFBA\",\"Arn\"]}",
+              "Output{\"Fn::GetAtt\":[\"BucketKey2EA18C7E\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"BucketKey2EA18C7E\",\"Arn\"]}",
+                "path": "ProjectAtallaKmsStack/Exports/Output{\"Fn::GetAtt\":[\"BucketKey2EA18C7E\",\"Arn\"]}",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.53.0"
@@ -326,7 +326,7 @@
                           "serverSideEncryptionByDefault": {
                             "sseAlgorithm": "aws:kms",
                             "kmsMasterKeyId": {
-                              "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+                              "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6"
                             }
                           }
                         }
@@ -752,7 +752,7 @@
                                   ],
                                   "Effect": "Allow",
                                   "Resource": {
-                                    "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+                                    "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6"
                                   }
                                 }
                               ],
@@ -3832,7 +3832,21 @@
                         }
                       ],
                       "Version": "2012-10-17"
-                    }
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/service-role/AmazonEC2RoleforSSM"
+                          ]
+                        ]
+                      }
+                    ]
                   }
                 },
                 "constructInfo": {
@@ -3883,7 +3897,7 @@
                               ],
                               "Effect": "Allow",
                               "Resource": {
-                                "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+                                "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6"
                               }
                             }
                           ],
@@ -3966,6 +3980,9 @@
                       },
                       "instanceType": "t3.micro",
                       "keyName": "Atalla_ssh_KeyPair2390",
+                      "monitoring": {
+                        "enabled": true
+                      },
                       "securityGroupIds": [
                         {
                           "Fn::GetAtt": [
@@ -4061,6 +4078,7 @@
                   "aws:cdk:cloudformation:props": {
                     "maxSize": "3",
                     "minSize": "1",
+                    "cooldown": "300",
                     "healthCheckGracePeriod": 300,
                     "healthCheckType": "ELB",
                     "launchTemplate": {
@@ -4094,6 +4112,39 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.53.0"
+                }
+              },
+              "ScalingPolicyscale_policy": {
+                "id": "ScalingPolicyscale_policy",
+                "path": "ProjectAtallaVpcStack/asg/ScalingPolicyscale_policy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ProjectAtallaVpcStack/asg/ScalingPolicyscale_policy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AutoScaling::ScalingPolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "autoScalingGroupName": {
+                          "Ref": "asgASG4D014670"
+                        },
+                        "policyType": "TargetTrackingScaling",
+                        "targetTrackingConfiguration": {
+                          "predefinedMetricSpecification": {
+                            "predefinedMetricType": "ASGAverageCPUUtilization"
+                          },
+                          "targetValue": 70
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_autoscaling.CfnScalingPolicy",
+                      "version": "2.53.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.TargetTrackingScalingPolicy",
                   "version": "2.53.0"
                 }
               }
@@ -4242,7 +4293,7 @@
                         },
                         "certificates": [
                           {
-                            "certificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/8e67a93a-3ae2-4bf9-8dcf-dd84ecd4efe9"
+                            "certificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/86386424-44d8-4054-a4df-0536b7aeaecd"
                           }
                         ],
                         "port": 443,

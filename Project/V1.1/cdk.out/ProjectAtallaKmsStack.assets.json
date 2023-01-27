@@ -1,7 +1,7 @@
 {
   "version": "21.0.0",
   "files": {
-    "6b1ae4c396fd956e43f8d296ec56d3d5a251004492527b4eaad3ae43c8fef59b": {
+    "c21e428f40d2533faba06f3ce774560927884f8a4361925bf6625bafc64722f0": {
       "source": {
         "path": "ProjectAtallaKmsStack.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "6b1ae4c396fd956e43f8d296ec56d3d5a251004492527b4eaad3ae43c8fef59b.json",
+          "objectKey": "c21e428f40d2533faba06f3ce774560927884f8a4361925bf6625bafc64722f0.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

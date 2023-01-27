@@ -54,7 +54,7 @@
     "aws:cdk:path": "ProjectAtallaKmsStack/EBS_Admin_Key/Alias/Resource"
    }
   },
-  "VaultKey9052AFBA": {
+  "BucketKey2EA18C7E": {
    "Type": "AWS::KMS::Key",
    "Properties": {
     "KeyPolicy": {
@@ -90,22 +90,22 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "ProjectAtallaKmsStack/Vault_Key/Resource"
+    "aws:cdk:path": "ProjectAtallaKmsStack/Bucket_Key/Resource"
    }
   },
-  "VaultKeyAlias3AC0B37D": {
+  "BucketKeyAlias344268E2": {
    "Type": "AWS::KMS::Alias",
    "Properties": {
-    "AliasName": "alias/Vault_Key",
+    "AliasName": "alias/Bucket_Key",
     "TargetKeyId": {
      "Fn::GetAtt": [
-      "VaultKey9052AFBA",
+      "BucketKey2EA18C7E",
       "Arn"
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "ProjectAtallaKmsStack/Vault_Key/Alias/Resource"
+    "aws:cdk:path": "ProjectAtallaKmsStack/Bucket_Key/Alias/Resource"
    }
   },
   "CDKMetadata": {
@@ -314,15 +314,15 @@
   }
  },
  "Outputs": {
-  "ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22": {
+  "ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6": {
    "Value": {
     "Fn::GetAtt": [
-     "VaultKey9052AFBA",
+     "BucketKey2EA18C7E",
      "Arn"
     ]
    },
    "Export": {
-    "Name": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+    "Name": "ProjectAtallaKmsStack:ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6"
    }
   },
   "ExportsOutputFnGetAttEBSAdminKey7632249CArn4F0137C3": {

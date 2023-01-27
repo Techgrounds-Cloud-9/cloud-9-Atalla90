@@ -1805,7 +1805,21 @@
       }
      ],
      "Version": "2012-10-17"
-    }
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AmazonEC2RoleforSSM"
+       ]
+      ]
+     }
+    ]
    },
    "Metadata": {
     "aws:cdk:path": "ProjectAtallaVpcStack/role/Resource"
@@ -1847,7 +1861,7 @@
        ],
        "Effect": "Allow",
        "Resource": {
-        "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+        "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6"
        }
       }
      ],
@@ -1904,6 +1918,9 @@
      },
      "InstanceType": "t3.micro",
      "KeyName": "Atalla_ssh_KeyPair2390",
+     "Monitoring": {
+      "Enabled": true
+     },
      "SecurityGroupIds": [
       {
        "Fn::GetAtt": [
@@ -1968,6 +1985,7 @@
    "Properties": {
     "MaxSize": "3",
     "MinSize": "1",
+    "Cooldown": "300",
     "HealthCheckGracePeriod": 300,
     "HealthCheckType": "ELB",
     "LaunchTemplate": {
@@ -2005,6 +2023,24 @@
    },
    "Metadata": {
     "aws:cdk:path": "ProjectAtallaVpcStack/asg/ASG"
+   }
+  },
+  "asgScalingPolicyscalepolicy3C9670AF": {
+   "Type": "AWS::AutoScaling::ScalingPolicy",
+   "Properties": {
+    "AutoScalingGroupName": {
+     "Ref": "asgASG4D014670"
+    },
+    "PolicyType": "TargetTrackingScaling",
+    "TargetTrackingConfiguration": {
+     "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ASGAverageCPUUtilization"
+     },
+     "TargetValue": 70
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ProjectAtallaVpcStack/asg/ScalingPolicyscale_policy/Resource"
    }
   },
   "apLb87C06AB8": {
@@ -2118,7 +2154,7 @@
     },
     "Certificates": [
      {
-      "CertificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/8e67a93a-3ae2-4bf9-8dcf-dd84ecd4efe9"
+      "CertificateArn": "arn:aws:acm:eu-central-1:375002073204:certificate/86386424-44d8-4054-a4df-0536b7aeaecd"
      }
     ],
     "Port": 443,
@@ -2180,7 +2216,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31SXU/jMBD8Lby7hgMh8ZqrKlSBkNVWvKKNu7S+OnZkr6miKP+dTdyQwEk87c7MavbDvpX3d/LmCs5xofenhTWlbLcE+iSYemtR38r2tdZi+e5e1VKoYD6AcJtKh9STU7bxiXAHpcWJn7giRq8NkPHuq1ioVFqjJ4vVWvXhBeiRm5yh6dHaEQYumFE8yQUVxLMeK3QkXpDOPpwKbQePCWX/ifgxym/yxK4chea7caa2qFMw1DwGn+rB71di7Q4BY7xsoRCDcYeldw71ONATNgpMEGsXCZzGfIRL/gzJ6eMOq9ryBXrpf+Zbw9XQrxMGKtlufH6dMY62Kvh3w5Ty/B7DmjnrBCTyUYPlKWVbMNhm8LXdT64TaCGS0dbDvgTL9ix98Dcq6po9h8M+s/Z30DAMO8zxvM5EQnepGfOZvoNw4J8xzjKDXSc2GH0K+X4KAlRI2Wku8On3prfqhGro6N31nfxzIx+u/kVjFiE5MhXKTY6fyNMggC0DAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31S0WrjMBD8lr4rul5Loa++EEq4UkQS+nqslW2iiywZadVgjP/91pYTO1fok3ZmltGsVg/y6VHe38E5LvT+tLCmlO2WQJ8EU39a1A+yfa+1WH64d7UUKphPINym0iH15FRtfCLcQWlx4ieuiNFrA2S8uzYLlUpr9GSxWqv+eAN64UvO0PRo7QgDN8woTjKigjjrsUJH4g3p7MOp0HbwmFD2n4j/onwnT+zKUWhujTO1RZ2CoeYl+FQPft8Sa3cIGOM4hUIMxh2W3jnUl0C/sVFggli7SOA05kcY61dITh93WNWWX6CXvjI3F66G+zphoJLtxuftXM6LrQr+wzClPO9jGDNXnYBEPmqwnFK2BYNtBtfpvnA7CAekXeA/xNwoTcY3RCfQQiSjrYd9CZazsPbJf66oa24YtvDK2q9BwzAMPMfzPhMJ3dhzqWd6DnYNPoNdJzYYfQr5sRUEqJCy01zgPe1Nb9UJ1dDRux+P8ue9fL77G41ZhOTIVCg3+fwHm4a6eloDAAA="
    },
    "Metadata": {
     "aws:cdk:path": "ProjectAtallaVpcStack/CDKMetadata/Default"

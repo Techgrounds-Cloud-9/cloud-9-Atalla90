@@ -20,9 +20,9 @@ class projectAtallaKmsStack(Stack):
             )
         self.ebs_admin_key = ebs_Admin_Key
 
-        bucket_Key = kms.Key(self, "Vault_Key",
+        bucket_Key = kms.Key(self, "Bucket_Key",
             enable_key_rotation = True,
-            alias = "Vault_Key",
+            alias = "Bucket_Key",
             removal_policy = RemovalPolicy.DESTROY,
             )
         self.bucket_key = bucket_Key

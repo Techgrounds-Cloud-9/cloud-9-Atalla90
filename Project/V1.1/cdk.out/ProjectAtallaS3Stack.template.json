@@ -8,7 +8,7 @@
       {
        "ServerSideEncryptionByDefault": {
         "KMSMasterKeyID": {
-         "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+         "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6"
         },
         "SSEAlgorithm": "aws:kms"
        }
@@ -210,7 +210,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "6e9b4ca768c9b3457251dfd61e747687e37db70791bb733c85cf87b0f4271a41.zip"
+     "e489178244ea3250a2d60624d0d92f944d823a2a195dad311625365d8d74b14c.zip"
     ],
     "DestinationBucketName": {
      "Ref": "storagebucket04DF299D"
@@ -350,7 +350,7 @@
        ],
        "Effect": "Allow",
        "Resource": {
-        "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttVaultKey9052AFBAArnA2202D22"
+        "Fn::ImportValue": "ProjectAtallaKmsStack:ExportsOutputFnGetAttBucketKey2EA18C7EArn6FBCB8F6"
        }
       }
      ],
