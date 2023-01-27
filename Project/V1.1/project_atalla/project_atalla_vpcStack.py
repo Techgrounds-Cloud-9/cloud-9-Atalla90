@@ -251,13 +251,13 @@ class projectAtallaVpcStack(Stack):
             rule_action = ec2.Action.ALLOW)
 
         admin_ingress100 = admin_acl.add_entry("rule-ssh-ingress-home",
-            cidr = ec2.AclCidr.ipv4("217.103.21.122/32"),
+            cidr = ec2.AclCidr.ipv4("82.170.155.178/32"),
             rule_number = 100,
             traffic = ec2.AclTraffic.tcp_port(22),
             direction = ec2.TrafficDirection.INGRESS,
             rule_action = ec2.Action.ALLOW)
         admin_ingress110 = admin_acl.add_entry("rule-rdp-ingress-home",
-            cidr = ec2.AclCidr.ipv4("217.103.21.122/32"),
+            cidr = ec2.AclCidr.ipv4("82.170.155.178/32"),
             rule_number = 110,
             traffic = ec2.AclTraffic.tcp_port(3389),
             direction = ec2.TrafficDirection.INGRESS,
@@ -299,7 +299,7 @@ class projectAtallaVpcStack(Stack):
             direction = ec2.TrafficDirection.EGRESS,
             rule_action = ec2.Action.ALLOW)
         admin_egress130 = admin_acl.add_entry("rule-ephemeral-egress-home",
-            cidr = ec2.AclCidr.ipv4("217.103.21.122/32"),
+            cidr = ec2.AclCidr.ipv4("82.170.155.178/32"),
             rule_number = 130,
             traffic = ec2.AclTraffic.tcp_port_range(1024, 65535),
             direction = ec2.TrafficDirection.EGRESS,
@@ -317,8 +317,8 @@ class projectAtallaVpcStack(Stack):
             direction = ec2.TrafficDirection.EGRESS,
             rule_action = ec2.Action.ALLOW)
 
-        ms_ingress50 = admin_sg.add_ingress_rule(peer = ec2.Peer.ipv4("217.103.21.122/32"), connection = ec2.Port.tcp(22))
-        ms_ingress60 = admin_sg.add_ingress_rule(peer = ec2.Peer.ipv4("217.103.21.122/32"), connection = ec2.Port.tcp(3389))
+        ms_ingress50 = admin_sg.add_ingress_rule(peer = ec2.Peer.ipv4("82.170.155.178/32"), connection = ec2.Port.tcp(22))
+        ms_ingress60 = admin_sg.add_ingress_rule(peer = ec2.Peer.ipv4("82.170.155.178/32"), connection = ec2.Port.tcp(3389))
 
         launchTemp = ec2.LaunchTemplate(self, "launchTemp",
             instance_type = ec2.InstanceType(instance_type_identifier = "t3.micro"),
